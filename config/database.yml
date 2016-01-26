@@ -1,0 +1,19 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tddblog
+  pool: 5
+  username: postgres
+  password: toaster
+  host: :localhost
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: tddblog_test
+  pool: 5
+  username: postgres
+  password: toaster
+  host: :localhost
