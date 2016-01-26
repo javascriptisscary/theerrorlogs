@@ -1,14 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe WelcomeController, type: :controller do
+RSpec.describe PostsController, type: :controller do
 
-
-
-  describe "GET #index" do
+ describe "GET #show" do
     it "returns http success" do
-      get :index
+      get :show
       expect(response).to have_http_status(:success)
     end
   end
+
 
 end
