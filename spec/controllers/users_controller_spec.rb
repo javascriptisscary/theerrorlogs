@@ -13,7 +13,7 @@ RSpec.describe UsersController, type: :controller do
 
     describe "GET #show" do
       it "redirects to login" do
-        @user1 = build(:user)
+        @user1 = create(:user)
         get :show, id: @user1.id
         expect(response).to redirect_to(new_user_session_path)
          
@@ -27,16 +27,27 @@ RSpec.describe UsersController, type: :controller do
       
       it "Creates User" do
         
-        puts "here is your attr #{@user}"
+        
         expect {
           post :create, user: {:email=>"exampleuser2@example.com", :password=>"123456789"}
         }.to change(User, :count).by(1) 
-end
+      
+      end
        
-
+      
+      it "redirects when failing to create user" do
+        
+        post :create, user: {:email=>"exampleuser2@example.com"}
+        expect(response).to redirect_to(root_path)
+        
+      
       end
 
+
+
     end
+
+  end # end no user logged in
 
   
 
@@ -53,22 +64,10 @@ end
 
     describe "GET #index" do
       it "returns http success" do
-        get :index
+        get :index, id: @user.id
         expect(response).to have_http_status(:success)
       end
     end
-
-
-
-
-
-
-      it "returns http success" do
-        get :show
-        expect(response).to have_http_status(:success)
-      end
-    
-
 
 
 
@@ -82,7 +81,7 @@ end
 
     describe "GET #edit" do
       it "returns http success" do
-        get :edit
+        get :edit, id: @user.id
         expect(response).to have_http_status(:success)
       end
     end
@@ -90,14 +89,14 @@ end
 
     describe "GET #update" do
       it "returns http success" do
-        get :update
+        get :update, id: @user.id
         expect(response).to have_http_status(:success)
       end
     end
 
     describe "GET #destroy" do
       it "returns http success" do
-        get :destroy
+        get :destroy, id: @user.id
         expect(response).to have_http_status(:success)
       end
     end
