@@ -3,14 +3,17 @@ class PostsController < ApplicationController
   
 
   def create
-    
+    @post = new.Post(post_params)
   end
 
 
   def show
     
   end
-
+  
+  def edit
+    
+  end
 
   def destroy
     
