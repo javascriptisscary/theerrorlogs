@@ -57,7 +57,7 @@ RSpec.describe UsersController, type: :controller do
 
   context "User is logged in" do
 
-    before(:each) do
+    before do
       @user = create(:user)
       sign_in @user
     end
@@ -87,19 +87,23 @@ RSpec.describe UsersController, type: :controller do
     end
 
 
-    describe "GET #update" do
-      it "returns http success" do
-        get :update, id: @user.id
+    describe "PUT #update" do
+      it "updates email" do
+        puts @user.attributes
+        put :update, id: @user, user: {email: "ladeda@example.com"}
+        @user.reload
         expect(response).to have_http_status(:success)
+        expect(@user.email).to eql "ladeda@example.com"
       end
     end
 
-    describe "GET #destroy" do
-      it "returns http success" do
-        get :destroy, id: @user.id
-        expect(response).to have_http_status(:success)
-      end
-    end
+    describe "DELETE #destroy" do
+      it "deletes the user" do  
+        expect {
+          delete :destroy, id: @user.id
+        }.to change(User, :count).by(-1) 
+       end
+     end
 
 
   end # end user logged in
