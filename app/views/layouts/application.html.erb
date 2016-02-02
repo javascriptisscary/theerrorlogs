@@ -19,10 +19,20 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand">TDD_BLOG
-      </a>
+      <a class="navbar-brand">TDD_BLOG</a>
     </div>
-  </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+          <li><%= link_to 'Profile', user_path(current_user.id), class: "btn btn-small btn-primary"%></li>
+          <li><%= link_to('Logout', destroy_user_session_path, class: "btn btn-small btn-warning", :method => :delete) %></li>
+    </ul>
+      <% else %>
+          <li><%= link_to 'Login', new_user_session_path, class: "btn btn-small btn-primary" %></li>
+    </ul>
+      <% end %>
+    
+    </ul>
+  </div> <!--container-->
 </nav>
 <%= yield %>
 
