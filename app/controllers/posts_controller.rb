@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     
     if @post.save!
       redirect_to @post, notice: 'Post was successfully created'
@@ -48,7 +49,7 @@ class PostsController < ApplicationController
   private
   
     def post_params
-      params.require(:post).permit(:user_id, :title, :content)
+      params.require(:post).permit(:title, :content)
     end
 
 end
