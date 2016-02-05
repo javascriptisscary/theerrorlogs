@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
   
   def index
     
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     
-    if @post.save!
+    if @post.save
       redirect_to @post, notice: 'Post was successfully created'
     else
       redirect_to root_path, alert: 'Post not created. Please try again.'

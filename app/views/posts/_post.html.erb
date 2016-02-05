@@ -1,0 +1,6 @@
+<% if can? :read, post %>
+   <%= post.body %>
+<% end %>
+<% if can?:edit, post %>
+   <%= link_to "Edit", edit_post_path(post) %>
+<% end %>

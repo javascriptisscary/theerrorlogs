@@ -44,6 +44,7 @@ GEM
       railties (>= 3.0)
     builder (3.2.2)
     byebug (8.2.1)
+    cancancan (1.12.0)
     capybara (2.5.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -230,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-wysihtml5-rails
   byebug
+  cancancan (~> 1.10)
   capybara
   coffee-rails (~> 4.1.0)
   devise

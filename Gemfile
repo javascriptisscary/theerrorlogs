@@ -24,6 +24,8 @@ gem 'devise'
 
 gem 'bootstrap-wysihtml5-rails'
 
+gem 'cancancan', '~> 1.10'
+
 group :development, :test do
 
   gem 'capybara'

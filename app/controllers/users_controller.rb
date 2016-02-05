@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create, :sign_in]
-  
+  load_and_authorize_resource
   
   def index
   end
