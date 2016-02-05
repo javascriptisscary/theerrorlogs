@@ -50,8 +50,13 @@ RSpec.describe PostsController, type: :controller do
     end 
  
     describe "GET #show" do
+      before do
+        @post = create(:post)
+      end
+      
       it "returns http success" do
-        get :show, id: 1
+        
+        get :show, id: @post.id
         expect(response).to have_http_status(:success)
       end
     end
@@ -107,8 +112,11 @@ RSpec.describe PostsController, type: :controller do
      end 
  
      describe "GET #show" do
+       before do
+        @post = create(:post)
+       end
        it "returns http success" do
-         get :show, id: 1
+         get :show, id: @post.id
          expect(response).to have_http_status(:success)
        end
      end
