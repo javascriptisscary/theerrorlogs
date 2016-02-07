@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <h1 class="text-center"><%=@user.email%> Profile Page</h1>
+  
+<p>Will have a profile photo here, perhaps latest entry.</p>
+
+<%=link_to 'blog entries', posts_path %>
+  
+  
+</div>

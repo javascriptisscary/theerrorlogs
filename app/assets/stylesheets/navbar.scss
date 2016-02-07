@@ -1,4 +1,32 @@
 .navbar-default .navbar-nav > li > a {
 
     color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+
+.navbar-default .navbar-nav>li>a.btn-primary:hover {
+    background-color: #286090;;
+    border-color: #204d74;;
+   
+}
+
+
+.navbar-default .navbar-nav>li>a.btn-success:hover {
+    background-color: #398439;
+    border-color: #255625;
+    
+}
+
+.navbar-default .navbar-nav>li>a.btn-warning:hover {
+    background-color: #ec971f;
+    border-color: #d58512;
+    
+    
+}
+
+.navbar-default .navbar-nav>li>a.btn:hover {
+    
+    color:white;
+    transition: .7s;
 }
