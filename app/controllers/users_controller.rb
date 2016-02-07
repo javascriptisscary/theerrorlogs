@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create, :sign_in]
+  before_action :authenticate_user!, except: [:new, :show, :create, :sign_in]
   load_and_authorize_resource
   
   def index
   end
 
   def show
-    
+    @user = User.find(params[:id])
   end
 
   def new

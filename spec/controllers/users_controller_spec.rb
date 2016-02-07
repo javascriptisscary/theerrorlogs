@@ -1,21 +1,21 @@
 require 'rails_helper'
+require "cancan/matchers"
 
 RSpec.describe UsersController, type: :controller do
 
-
-
-
-
-
   
-    
   context "No user is logged in" do
-
+    
+    
+    
     describe "GET #show" do
-      it "redirects to login" do
+      before do
         @user1 = create(:user)
+      end
+      it "returns http success" do
+        
         get :show, id: @user1.id
-        expect(response).to redirect_to(new_user_session_path)
+        expect(response).to have_http_status(:success)
          
        end
     end
@@ -23,29 +23,52 @@ RSpec.describe UsersController, type: :controller do
 
     describe "POST #create" do
       
-     
-      
       it "Creates User" do
-        
-        
-        expect {
-          post :create, user: {:email=>"exampleuser2@example.com", :password=>"123456789"}
-        }.to change(User, :count).by(1) 
+         expect {
+           post :create, user: {:email=>"exampleuser2@example.com", :password=>"123456789"}
+         }.to change(User, :count).by(1) 
       
       end
        
       
-      it "redirects when failing to create user" do
+       it "redirects when failing to create user" do
         
-        post :create, user: {:email=>"exampleuser2@example.com"}
-        expect(response).to redirect_to(root_path)
+         post :create, user: {:email=>"exampleuser2@example.com"}
+         expect(response).to redirect_to(root_path)
         
       
+      
+       end
+    end
+    
+    context "Authorizations" do
+
+      before do
+        @user1 = create(:user)
       end
 
+      describe "PUT #update" do
+       
+        it "will not have authorization" do
+          should_not be_able_to(:update, @user1)
+        end
+      end
 
-
-    end
+      describe "GET Edit" do
+      
+        it "will redirect to sign in" do
+          get :edit, id:  @user1.id
+          expect(response).to redirect_to(new_user_session_path)
+        end
+      end
+    
+      describe "DELETE #Destroy" do
+        it "will not have authorization" do
+          should_not be_able_to(:delete, @user1)
+        end
+      end
+  
+    end #authorizations
 
   end # end no user logged in
 
@@ -104,11 +127,42 @@ RSpec.describe UsersController, type: :controller do
         }.to change(User, :count).by(-1) 
        end
      end
+  
+    context "User tries to access other User" do
+      before do
+        @user1 = create(:user)
+      end
 
+      describe "PUT #update" do
+       
+        it "will not have authorization" do
+          should_not be_able_to(:update, @user1)
+        end
+      end
+
+      describe "GET #Edit" do
+      
+        it "will redirect to sign in" do
+          expect{get :edit, id: @user1.id}.to raise_error(CanCan::AccessDenied)
+        end
+      end
+    
+      describe "DELETE #Destroy" do
+        it "will not have authorization" do
+          should_not be_able_to(:delete, @user1)
+        end
+      end
+  
+    end #User tries to access other User
 
   end # end user logged in
   
   
+ 
+ 
+ 
+ 
+ end 
   
   
   
@@ -119,6 +173,3 @@ RSpec.describe UsersController, type: :controller do
   
   
   
-  
-  
-end
