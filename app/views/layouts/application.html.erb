@@ -18,9 +18,9 @@
   <p class="alert"><%= alert %></p>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="container" id="navbar-contain">
     <div class="navbar-header">
-      <a class="navbar-brand">TDD_BLOG</a>
+      <%= link_to 'TDD_BLOG', root_path, class:'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>

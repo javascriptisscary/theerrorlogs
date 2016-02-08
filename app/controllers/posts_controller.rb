@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @posts = Post.where(params[:user_id])
+    @posts = Post.find_by user_id:(params[:user_id])
+    puts "here are the posts #{@posts}"
   end
 
   def create

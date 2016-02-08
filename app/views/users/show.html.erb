@@ -3,7 +3,7 @@
   
 <p>Will have a profile photo here, perhaps latest entry.</p>
 
-<%=link_to 'blog entries', posts_path %>
+<%=link_to 'blog entries', posts_path(user_id: @user.id) %>
   
   
 </div>

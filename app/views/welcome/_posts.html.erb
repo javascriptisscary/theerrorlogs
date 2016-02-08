@@ -1,0 +1,7 @@
+<%posts.each do |post| %>
+   <div class="container">
+     <h2><strong><%= link_to post.title, post_path(post.id) %></strong></h2>
+     <%= post.content.html_safe %>
+   </div>
+<% end %>
+
