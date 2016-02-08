@@ -30,3 +30,10 @@
     color:white;
     transition: .7s;
 }
+
+.navbar {
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+-webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+}
