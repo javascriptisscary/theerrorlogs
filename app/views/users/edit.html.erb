@@ -1,2 +1,13 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <h1 class="text-center"><%=@user.email%> Profile Page</h1>
+  
+  <p>Will have a profile photo here, perhaps latest entry.</p>
+<%= image_tag @user.avatar(:medium) %>
+<%= form_for @user, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit 'Submit Image', class: "btn btn-primary" %> 
+<% end %>
+<%=link_to 'blog entries', posts_path(user_id: @user.id) %>
+  
+  
+</div>

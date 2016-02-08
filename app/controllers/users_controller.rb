@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user == current_user
+        redirect_to edit_user_path(current_user)
+    end
+    
   end
 
   def new
@@ -14,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user= current_user
   end
 
   def create
@@ -46,7 +51,7 @@ class UsersController < ApplicationController
     private
      
       def user_params
-        params.require(:user).permit(:email, :password)
+        params.require(:user).permit(:email, :password, :avatar)
       end
    
 end

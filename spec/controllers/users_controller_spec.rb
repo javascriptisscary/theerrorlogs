@@ -92,7 +92,12 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-
+    describe 'GET own #show page' do
+      it 'redirects to #edit'do
+        get :show, id: @user.id
+        expect(response).to redirect_to edit_user_path
+      end
+    end
 
 
     describe "GET #new" do

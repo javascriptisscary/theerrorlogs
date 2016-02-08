@@ -26,6 +26,8 @@ gem 'bootstrap-wysihtml5-rails'
 
 gem 'cancancan', '~> 1.10'
 
+gem "paperclip", '~> 4.3'
+
 group :development, :test do
 
   gem 'capybara'

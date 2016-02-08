@@ -41,4 +41,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #paperclip dev
+  Paperclip.options[:command_path] = "/home/kenny/rubystack-2.2.2-3/common/bin/convert"
+  
+  
 end
