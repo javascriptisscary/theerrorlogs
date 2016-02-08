@@ -73,7 +73,7 @@ RSpec.describe PostsController, type: :controller do
      before do
         @user = create(:user)
         sign_in @user
-        @post_attr = FactoryGirl.attributes_for(:post)
+        @post_attr = FactoryGirl.attributes_for(:post, user_id: @user.id)
         #create post for updating and destroying
         @post = create(:post, user_id: @user.id)
      end
