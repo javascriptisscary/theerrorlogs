@@ -14,8 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container" id="navbar-contain">
@@ -37,6 +36,11 @@
     </ul>
   </div> <!--container-->
 </nav>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+   <% elsif flash[:alert]%>
+     <div class="alert"><%= flash[:alert] %></div>
+<% end %>
 <%= yield %>
 
 </body>

@@ -16,11 +16,31 @@
  */
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
   background-color: #f1f1f1;
 }
 
 .container {
   background-color: #fff;
+  
+ 
+}
+
+.post {
+  margin-top: 80px;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.notice {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.alert {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 5px
 }
