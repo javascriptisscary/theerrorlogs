@@ -7,6 +7,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'rspec/rails'
 require 'capybara/rspec'
+require "paperclip/matchers"
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -43,6 +45,10 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+
+
+
+  config.include Paperclip::Shoulda::Matchers
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -57,4 +63,10 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  
+  config.after(:suite) do
+    FileUtils.rm_rf(Dir["#{Rails.root}/spec/test_files/"])
+  end
 end
+
+
