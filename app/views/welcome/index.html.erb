@@ -1,4 +1,5 @@
-<div class="container">
-  <h2 class="text-center">Welcome to TDD-Blog. Here are some of our latest posts:</h2>
+<div class="fluid-container" style="background-color: #fff;">
+  <%=image_tag "tdd_blog_logo.png", class: "img-responsive logo" %>
+  <h3 class="text-center">The blog network created using a combination of test-driven and behaviorial driven development.</h3>
 </div>
 <%=render'posts', posts: @posts %>
