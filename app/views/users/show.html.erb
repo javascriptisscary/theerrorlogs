@@ -1,11 +1,13 @@
 <div class="container">
   <h1 class="text-center"><%=@user.email%> Profile Page</h1>
   
-  <p>Will have a profile here, perhaps latest entry.</p>
-<%=image_tag @user.avatar(:medium) %>
-
-
-<%=link_to 'blog entries', posts_path(user_id: @user.id) %>
-  
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+<%=image_tag @user.avatar(:medium), class: "profile" %>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <%=render 'table' %>
+    </div>
+  </div>
   
 </div>

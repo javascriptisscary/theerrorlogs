@@ -12,6 +12,7 @@ RSpec.describe UsersController, type: :controller do
       before do
         @user1 = create(:user)
       end
+      
       it "returns http success" do
         
         get :show, id: @user1.id
@@ -99,7 +100,17 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-
+    describe 'GET different #show page' do
+      before do
+      @user1 = create(:user)
+      end
+      it 'displays user profile' do
+        get :show, id: @user1.id
+        expect(response).to have_http_status(:success)
+        
+      end
+    end
+  
     describe "GET #new" do
       it "returns http success" do
         get :new

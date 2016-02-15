@@ -11,5 +11,16 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "remove_time" do
+    before do
+      @user = create(:user)
+      @post = create(:post, user_id: @user.id)
+    end
+  
+    it "slices created_at into a 10 character date" do
+      expect(helper.remove_time(@post).length).to eq(10)
+    end
+  end
+  
 end
