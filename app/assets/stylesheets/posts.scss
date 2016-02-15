@@ -1,3 +1,28 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  background-color: #fff;
+  
+ 
+}
+
+article {
+    padding-bottom: 2%;
+}
+
+.post-info{
+    color:rgba(51,51,51,0.7);
+    background-color: #f7f7f7;
+    padding: .5% 2%;
+    margin-top: 0;
+    font-size:1.5em;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.info-pad {
+    padding-left:1%;
+    padding-right: 1%;
+}
+

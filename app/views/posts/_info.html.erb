@@ -1,0 +1,9 @@
+<footer class="container post-info garamond">
+  <%= link_to user_path(post.user_id) do%>
+    <%= image_tag post.user.avatar(:thumb), class: "img-circle info-pad" %>
+  <%end%>
+  <%= link_to post.user.email, class:"info-pad" %>
+  
+  <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
+  <%= post.created_at %>
+</footer>
