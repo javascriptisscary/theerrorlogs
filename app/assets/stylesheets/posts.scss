@@ -10,8 +10,12 @@
 
 article {
     padding-bottom: 2%;
+    margin-top: 30px;
 }
 
+article a{
+  color: black;
+}
 .post-info{
     color:rgba(51,51,51,0.7);
     background-color: #f7f7f7;
@@ -40,4 +44,5 @@ article {
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+
 }

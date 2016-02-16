@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user == current_user
         redirect_to edit_user_path(current_user)
     end
-    
+    @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:page], per_page: 4) 
   end
 
   def new
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def edit
     @user= current_user
+    @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
   def create

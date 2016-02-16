@@ -13,5 +13,17 @@
 }
 
 .container h1 {
-    font-family: 'EB Garamond'
+    font-family: 'EB Garamond';
+    padding-bottom: 20px;
+}
+
+section {
+    margin-top:80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.table{
+    margin-bottom: 0;
 }
