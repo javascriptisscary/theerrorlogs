@@ -36,4 +36,36 @@ RSpec.describe User, type: :model do
 
 end
   
+  
+
+  
+  
+  describe "Follow and unFollow Methods" do
+    before do
+      @user = create(:user)
+      @user1 = create(:user)
+    end
+    
+    it 'will be false' do
+      expect(@user.following?(@user1)).to be false
+    end
+    
+
+    
+    it 'will follow then unfollow a user' do
+      @user.follow(@user1)
+      expect(@user.following?(@user1)).to be true
+      
+      expect(@user1.being_followed?(@user)). to be true
+      
+      @user.unfollow(@user1)
+      expect(@user.following?(@user1)).to be false
+    end
+    
+    
+  end
+      
+  
+  
+  
 end
