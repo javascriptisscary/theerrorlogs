@@ -1,9 +1,26 @@
+<div class="stats">
+  
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    following
+  
+  
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    followers
+  
+</div>
+
+
+
 <% if user_signed_in? %>
 <div>
   <% if current_user.following?(@user) %>
-    <%= link_to 'UnFollow', relationship_path(current_user.active_relationships.find_by(followed_id: @user.id)), method: :delete, class: "btn btn-lg btn-warning" %>
+    <%= link_to 'UnFollow', relationship_path(current_user.active_relationships.find_by(followed_id: @user.id)), method: :delete, class: "btn btn-lg btn-warning", remote: true %>
   <% else %>
-    <%= link_to 'Follow', relationships_path(followed_id: @user.id), method: :post, class: "btn btn-lg btn-success" %>
+    <%= link_to 'Follow', relationships_path(followed_id: @user.id), method: :post, class: "btn btn-lg btn-success", remote: true %>
   <% end %>
 </div>
   
