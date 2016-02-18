@@ -1,0 +1,11 @@
+<li>
+   <%= link_to user, class: "thumb-link" do%>
+    <%= image_tag user.avatar(:thumb), class: "img-circle thumb" %>
+  <%end%>
+  <%= link_to user.email, user %>
+    | <%= link_to "delete", user, method: :delete, class: "btn btn-danger",
+                                  data: { confirm: "You sure?" } %>
+
+  
+  
+</li>

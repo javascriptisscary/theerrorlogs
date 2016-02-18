@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :show, :create, :sign_in]
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:following, :followers ]
   
   def index
   end
@@ -54,14 +54,14 @@ class UsersController < ApplicationController
     @title = "Following"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
-    render 'show_follow'
+    render '/shared/_show_follow'
   end
 
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
+    render '/shared/_show_follow'
   end
   
   
