@@ -1,23 +1,34 @@
 class RelationshipsController < ApplicationController
   
   def create
-    User.find(params[:follower_id])
-    @follow = current_user.follows.build(params[:follower_id])
-    
-    if @follow.save
-        flash[:notice] = "You are following"
-    end
-    
+    @user = User.find(params[:followed_id])
+    current_user.follow(@user)
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js { }
+    end    
+       
+
+
   end
+    
+  
   
   def destroy
-    
+    @user = Relationship.find(params[:id]).followed
+    current_user.unfollow(@user)
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js {  }
+    end
+   
+
   end
 
 private
 
   def follows_params
-    params.require(:follow).permit(:follower_id)
+    params.require(:relationship).permit(:follower_id)
   
   end
 

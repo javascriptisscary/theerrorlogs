@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :posts 
   
-  post 'follows/create'
+  resources :relationships,  only: [:create, :destroy]
+
   
    
   

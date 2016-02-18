@@ -4,6 +4,8 @@
   <div class="row">
     <div class="col-sm-6 col-xs-12">
 <%=image_tag @user.avatar(:medium), class: "profile" %>
+<%= render 'stats' %>
+<%=render 'shared/follow' %>
     </div>
     <div class="col-sm-6 col-xs-12">
       <%=render 'table' %>

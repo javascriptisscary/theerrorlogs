@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+<div>
+  <% if current_user.following?(@user) %>
+    <%= link_to 'UnFollow', relationship_path(current_user.active_relationships.find_by(followed_id: @user.id)), method: :delete, class: "btn btn-lg btn-warning" %>
+  <% else %>
+    <%= link_to 'Follow', relationships_path(followed_id: @user.id), method: :post, class: "btn btn-lg btn-success" %>
+  <% end %>
+</div>
+  
+<% end %>
