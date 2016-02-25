@@ -10,7 +10,11 @@
 <% end %>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <%= render 'table' %>
+      <% unless @posts ==nil %>
+        <%= render 'shared/table' %>
+      <% else %>
+        <p>You do not yet have any posts to display.</p>
+      <% end%>
     </div>
   </div>
   

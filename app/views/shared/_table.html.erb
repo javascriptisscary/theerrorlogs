@@ -6,15 +6,15 @@
         </thead>
         <tbody>
           
-          <% @posts.each do |post| %>
-          <tr>
-            <td><%=link_to post.title, post_path(post.id) %></td>
-            <td><%= remove_time(post)%></td>
-          </tr>
+            <% @posts.each do |post| %>
+              <tr>
+                <td><%=link_to post.title, post_path(post.id) %></td>
+                <td><%= remove_time(post)%></td>
+              </tr>
           
-  <% end %>
- 
+            <% end %>
+          
         </tbody>
         
-      </table>
+</table>
 <%= will_paginate @posts, page_links: false, class: "digg_pagination" %>

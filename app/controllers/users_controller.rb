@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render :show, notice: 'User successfully updated'
+      render :edit, notice: 'User successfully updated'
     else
       render :edit, alert: 'User not updated. Please try again.'
     end
