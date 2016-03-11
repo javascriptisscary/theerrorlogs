@@ -8,6 +8,16 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, class: "form-control log-in", autofocus: true %>
   </div>
+  
+   <div class="field form-group">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, class: "form-control log-in" %>
+  </div>
+   
+    <div class="field form-group">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, class: "form-control log-in" %>
+  </div>
 
   <div class="field form-group">
     <%= f.label :password %>

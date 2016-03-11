@@ -1,5 +1,5 @@
 <section class="container">
-  <h1 class="text-center"><%=@user.email%> Profile Page</h1>
+  <h1 class="text-center"><%=@user.full_name %></h1>
   
   <div class="row">
     <div class="col-sm-6 col-xs-12">
@@ -15,7 +15,9 @@
       <% else %>
         <p>You do not yet have any posts to display.</p>
       <% end%>
+      
     </div>
+    
   </div>
-  
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %>
 </section>

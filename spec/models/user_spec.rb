@@ -20,6 +20,16 @@ RSpec.describe User, type: :model do
         expect(@user).to_not be_valid
       end
   
+      it "should not validate users without first name" do
+        @user = build(:user, first_name: "" )
+        expect(@user).to_not be_valid
+      end
+  
+      it "should not validate users without last name" do
+        @user = build(:user, last_name: "" )
+        expect(@user).to_not be_valid
+      end
+  
     end
   
   
@@ -37,7 +47,18 @@ RSpec.describe User, type: :model do
 end
   
   
-
+  describe "Full_name Method" do
+    before do
+      @user = build(:user, first_name: "John", last_name: "Madden")
+    end
+    
+    it "will make a full name" do
+      expect(@user.full_name).to eq("John Madden")
+    
+    end
+    
+    
+  end
   
   
   describe "Follow and unFollow Methods" do

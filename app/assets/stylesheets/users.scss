@@ -28,6 +28,11 @@ section {
     margin-bottom: 0;
 }
 
+.edit-profile-link {
+    margin-top: 20px;
+    margin-right: 50px;
+    float:right;
+}
 
 .log-in {
     width: 40%;
@@ -37,5 +42,18 @@ section {
 .users-follow {
     list-style-type: none;
     text-align: center;
+}
+
+.user-index {
+    margin-top:20px;
+}
+
+.user-index-link {
+    padding-top:20px;
+}
+
+.search-form {
+margin: 10px auto;
+    
 }
 

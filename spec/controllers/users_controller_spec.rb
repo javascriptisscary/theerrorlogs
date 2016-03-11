@@ -26,7 +26,7 @@ RSpec.describe UsersController, type: :controller do
       
       it "Creates User" do
          expect {
-           post :create, user: {:email=>"exampleuser2@example.com", :password=>"123456789"}
+           post :create, user: {:email=>"blablajhgjyt@example.com", :password=>"123456789", :first_name=>"John", :last_name=>"Smith"}
          }.to change(User, :count).by(1) 
       
       end

@@ -6,7 +6,8 @@ RSpec.describe PostsController, type: :controller do
  
   context "No User logged in" do
      before do
-        @post = create(:post)
+        @post_maker = create(:user)
+        @post = create(:post, user_id: @post_maker.id)
       end
  
     describe "POST #create" do
@@ -48,7 +49,7 @@ RSpec.describe PostsController, type: :controller do
    
     describe "GET #index" do
       it "returns http success" do
-        get :index, id: 1
+        get :index
         expect(response).to have_http_status(:success)
       end
     end 
@@ -110,14 +111,15 @@ RSpec.describe PostsController, type: :controller do
    
      describe "GET #index" do
        it "returns http success" do
-         get :index, id: 1
+         get :index
          expect(response).to have_http_status(:success)
        end
      end 
  
      describe "GET #show" do
        before do
-        @post = create(:post)
+        @post_maker = create(:user)
+        @post = create(:post, user_id: @post_maker.id)
        end
        it "returns http success" do
          get :show, id: @post.id

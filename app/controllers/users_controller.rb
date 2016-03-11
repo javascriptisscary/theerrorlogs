@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :show, :create, :sign_in]
+  before_action :authenticate_user!, except: [:new, :index, :show, :create, :sign_in]
   load_and_authorize_resource except: [:following, :followers ]
   
   def index
+    if params[:q]
+      search_term = params[:q]
+      @users = User.where("((first_name || ' ' || last_name) ilike ?) OR (first_name ilike ?) OR (last_name ilike ?)", "%#{search_term}%", "%#{search_term}%", "%#{search_term}%")
+    else
+      @users = User.order(email: :asc)
+    end
   end
 
   def show
@@ -70,7 +76,7 @@ class UsersController < ApplicationController
     private
      
       def user_params
-        params.require(:user).permit(:email, :password, :avatar)
+        params.require(:user).permit(:email, :password, :avatar, :first_name, :last_name)
       end
    
 end

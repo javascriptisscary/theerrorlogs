@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   
   
+  
+  #validations
+  validates :first_name, :last_name, :email, presence: true
+  
+  
   #paperclip
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50>" }, default_url: "/images/missing_:style.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -28,6 +33,13 @@ class User < ActiveRecord::Base
   validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
   
   
+  def full_name
+    self.first_name + " " + self.last_name
+  end
+  
+  
+  
+  #start the following stuff
   def following?(other_user)
     following.include?(other_user)
   end
