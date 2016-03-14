@@ -15,7 +15,22 @@
       <% else %>
         <p>You do not yet have any posts to display.</p>
       <% end%>
-      
+      <div id ="following"> <!-- for Ajax-->
+        <div class="stats">
+  
+    <strong class="stat">
+      <%= @user.following.count %>
+    </strong>
+    <%=link_to 'following', following_user_path(@user.id) %>
+  
+  
+    <strong class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    <%=link_to 'followers', followers_user_path(@user.id) %>
+  
+</div>
+      </div>
     </div>
     
   </div>

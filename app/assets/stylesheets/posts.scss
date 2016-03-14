@@ -26,9 +26,20 @@ article a{
 }
 
 .info-pad {
-    padding-left:2%;
+    padding-left:1%;
     padding-right: 1%;
+    color: #333;
 }
+
+.info-pad:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.info-edit {
+  font-style: italic;
+}
+
 
 .thumb-link:hover{
     text-decoration:none;

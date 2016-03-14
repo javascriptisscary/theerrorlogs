@@ -5,11 +5,11 @@ Warden.test_mode!
 describe "User makes new Post" do
   
   before :each do
-   @user = User.create(email: 'user@example.com', password: 'password')
+   @user = User.create(email: 'user@example.com', password: 'password', first_name: 'John', last_name: "Smith")
    login_as(@user, :scope => :user)
   end
 
-  it "clicks on new post" do
+  it "makes a new post and edits it" do
     visit user_path(@user.id)
     click_link 'New Post'
     
@@ -21,10 +21,24 @@ describe "User makes new Post" do
      end
      click_button 'Submit'
      expect(page).to have_content "Ladeda. I'm a random blog post and I'm going to work. Go me! Capybara is the best! Not!"
-  end
-    
+  
+  
+  
+    #edit
+    click_link 'Edit Post'
+    expect(page).to have_content "Ladeda. I'm a random blog post and I'm going to work. Go me! Capybara is the best! Not!"
    
+    within("#new-content") do
+      fill_in 'Content', with: "I'm an edited blog post."
+    end
     
+    click_button 'Submit'
+    expect(page).to have_content "I'm an edited blog post."
+  
+  end
+
+
+
 end
   
   
