@@ -24,7 +24,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+    <%= f.label :password %><br> <i>(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, class: "form-control log-in", autocomplete: "off" %>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 
   <div class="field form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+    <%= f.label :current_password %> <br><i>(we need your current password to confirm your changes)</i>
     <%= f.password_field :current_password, class: "form-control log-in", autocomplete: "off" %>
   </div>
 

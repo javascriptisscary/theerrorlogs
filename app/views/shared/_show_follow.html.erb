@@ -4,7 +4,7 @@
   <aside class="col-md-4">
     <div class="user_info">
       <%=image_tag @user.avatar(:medium), class: "profile" %>
-      <h1><%= @user.email %></h1>
+      <h1><%= @user.full_name %></h1>
       <span><%= link_to "view my profile", @user %></span>
       <span><b>Posts:</b> <%= @user.posts.count %></span>
     </div>
@@ -22,7 +22,7 @@
     </div>
   </aside>
   <div class="col-md-8">
-    <h3><%= @title %></h3>
+    <h3 class="text-center"><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users-follow">
         <%= render @users %>

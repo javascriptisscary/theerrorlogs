@@ -2,7 +2,7 @@
   <%= link_to user_path(post.user_id), class: "thumb-link" do%>
     <%= image_tag post.user.avatar(:thumb), class: "img-circle thumb" %>
   <%end%>
-  <%= link_to post.user.email, user_path(post.user), class: "info-pad" %>
+  <%= link_to post.user.full_name, user_path(post.user), class: "info-pad" %>
   
   <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
   <%= post.created_at %>
