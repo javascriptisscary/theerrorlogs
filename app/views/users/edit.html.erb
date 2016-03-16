@@ -17,22 +17,20 @@
       <% end%>
       <div id ="following"> <!-- for Ajax-->
         <div class="stats">
-  
-    <strong class="stat">
-      <%= @user.following.count %>
-    </strong>
-    <%=link_to 'following', following_user_path(@user.id) %>
-  
-  
-    <strong class="stat">
-      <%= @user.followers.count %>
-    </strong>
-    <%=link_to 'followers', followers_user_path(@user.id) %>
-  
-</div>
+          <strong class="stat">
+            <%= @user.following.count %>
+          </strong>
+          <%=link_to 'following', following_user_path(@user.id) %>
+          <strong class="stat">
+            <%= @user.followers.count %>
+          </strong>
+          <%=link_to 'followers', followers_user_path(@user.id) %>
+        </div>
       </div>
     </div>
-    
   </div>
-  <%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %>
+  <ul class="profile-list">
+    <li><%=link_to 'Find Users', users_path, class: "link-to-users-index" %></li>
+    <li><%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %></li>
+  </ul>
 </section>

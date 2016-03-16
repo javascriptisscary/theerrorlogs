@@ -1,7 +1,7 @@
 <section class="container">
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-xs-12 col-md-4">
     <div class="user_info">
       <%=image_tag @user.avatar(:medium), class: "profile" %>
       <h1><%= @user.full_name %></h1>
@@ -21,7 +21,7 @@
       <% end %>
     </div>
   </aside>
-  <div class="col-md-8">
+  <div class="col-xs-12 col-md-8">
     <h3 class="text-center"><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users-follow">

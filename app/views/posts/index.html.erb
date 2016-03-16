@@ -1,5 +1,7 @@
-<div class="container">
 
-<%= render @posts %>
 
-</div>
+  <% @users.each do |user| %>
+  
+<%= render 'shared/posts', posts: user.posts %>
+
+<% end %>
