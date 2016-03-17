@@ -3,10 +3,10 @@
     <%= image_tag user.avatar(:thumb), class: "img-circle thumb" %>
   <%end%>
   <%= link_to user.full_name, user %>
-  <% if user == current_user %>
+  
     | <%= link_to "delete", user, method: :delete, class: "btn btn-danger",
                                   data: { confirm: "You sure?" } %>
-  <% end %>
+  
   
   
 </li>
