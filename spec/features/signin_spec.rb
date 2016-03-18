@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe "Signing in" do
   before do
-    User.create(email: 'user@example.com', password: 'password', first_name: "John", last_name: "Smith")
+    create(:user, email: 'user@example.com', password: 'password', first_name: "John", last_name: "Smith")
   end
   
   describe "Entering wrong password" do

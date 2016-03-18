@@ -2,6 +2,7 @@ require 'rails_helper'
 include Warden::Test::Helpers
 Warden.test_mode!
 
+
 describe "User makes new Post" do
   
   before :each do
