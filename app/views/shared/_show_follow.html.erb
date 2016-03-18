@@ -24,10 +24,13 @@
   <div class="col-xs-12 col-md-8">
     <h3 class="text-center"><%= @title %></h3>
     <% if @users.any? %>
-      <ul class="users-follow">
+      <table class="table table-striped">
+        <thead> <%= @title%></thead>
+        <tbody>
         <%= render @users %>
-      </ul>
-      <%= will_paginate %>
+        </tbody>
+      </table>
+      <%= will_paginate @users, page_links: false, class: "digg_pagination"%>
     <% end %>
   </div>
 </div>
