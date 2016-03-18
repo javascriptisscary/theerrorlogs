@@ -125,6 +125,26 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
+    describe "GET #edit_photo" do
+      it "returns http success" do
+        get :edit_photo, id: @user.id
+        expect(response).to have_http_status(:success)
+      end
+    end
+    
+    describe "GET #followers" do
+      it "returns http success" do
+        get :followers, id: @user.id
+        expect(response).to have_http_status(:success)
+      end
+    end
+    
+    describe "GET #following" do
+      it "returns http success" do
+        get :following, id: @user.id
+        expect(response).to have_http_status(:success)
+      end
+    end
 
     describe "PUT #update" do
       it "updates email" do

@@ -3,11 +3,28 @@
   
   <div class="row">
     <div class="col-sm-6 col-xs-12">
-<%= image_tag @user.avatar(:medium), class: "profile" %>
-<%= form_for @user, html: { multipart: true } do |form| %>
-  <%= form.file_field :avatar %>
-  <%= form.submit 'Submit Image', class: "btn btn-primary", id:"submit-edit" %> 
-<% end %>
+      <div id="profile-edit-photo">
+        <%= link_to edit_photo_user_path do %>
+          <%= image_tag @user.avatar(:medium), id: "profile", data: { toggle: 'tooltip', placement: "right" }, title: "Change profile photo" %>
+        <% end %>
+        <span class="glyphicon glyphicon-camera"></span>
+      </div>
+      <div id ="following"> 
+        <div class="stats">
+          <strong class="stat">
+            <%= link_to following_user_path(@user.id) do %>
+              <%= @user.following.count %>
+            <% end %>
+          </strong>
+          Following
+          <strong class="stat">
+            <%= link_to followers_user_path(@user.id) do %>
+              <%= @user.followers.count %>
+            <% end %>
+          </strong>
+          Followers
+        </div>
+      </div>
     </div>
     <div class="col-sm-6 col-xs-12">
       <% unless @posts ==nil %>
@@ -15,18 +32,7 @@
       <% else %>
         <p>You do not yet have any posts to display.</p>
       <% end%>
-      <div id ="following"> <!-- for Ajax-->
-        <div class="stats">
-          <strong class="stat">
-            <%= @user.following.count %>
-          </strong>
-          <%=link_to 'following', following_user_path(@user.id) %>
-          <strong class="stat">
-            <%= @user.followers.count %>
-          </strong>
-          <%=link_to 'followers', followers_user_path(@user.id) %>
-        </div>
-      </div>
+      
     </div>
   </div>
   <ul class="profile-list">

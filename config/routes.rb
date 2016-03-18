@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :edit_photo
     end
   end
 
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
  
    
-  
    
    
    

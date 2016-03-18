@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.profile {
+#profile {
     margin-bottom:5%;
     border: 1px solid rgba(0,0,0,0.5);
     
@@ -34,6 +34,15 @@ section {
     
 }
 
+.glyphicon-camera {
+    position: absolute;
+    color: rgba(255,255,255,.7);
+    font-size: 2em;
+    left: 5%;
+    top: 78%;
+    z-index: 10000
+}
+
 .log-in {
     width: 40%;
     margin: 0 auto;
@@ -61,11 +70,17 @@ margin: 10px auto;
     
 }
 
-
+#following {
+    margin-top: 15px;
+}
 
 
 .profile-list {
     list-style-type:none;
     float:right;
+}
+
+#user_avatar {
+    margin: 0 auto;
 }
 

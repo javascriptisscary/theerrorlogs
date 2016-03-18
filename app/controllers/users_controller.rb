@@ -55,6 +55,9 @@ class UsersController < ApplicationController
     
   end
   
+  def edit_photo
+    @user = current_user
+  end
   
   def following
     @title = "Following"
