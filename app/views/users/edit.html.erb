@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-sm-6 col-xs-12">
       <div id="profile-edit-photo">
-        <%= link_to edit_photo_user_path do %>
+        <%= link_to edit_photo_user_path(current_user) do %>
           <%= image_tag @user.avatar(:medium), id: "profile", data: { toggle: 'tooltip', placement: "right" }, title: "Change profile photo" %>
         <% end %>
         <span class="glyphicon glyphicon-camera"></span>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <% unless @posts ==nil %>
+      <% unless @posts.empty? %>
         <%= render 'shared/table' %>
       <% else %>
         <p>You do not yet have any posts to display.</p>
@@ -41,6 +41,7 @@
   </ul>
 </section>
 <script>
+  $( document ).ready(function() {
  //place camera icon inside users#edit image tactfully by changing div size
     function camera_icon() {
       var image_width = $("#profile").width();
@@ -54,4 +55,6 @@
     }
     
     camera_icon();
+    
+    });
 </script>

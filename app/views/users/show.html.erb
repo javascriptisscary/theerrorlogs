@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="col-sm-6 col-xs-12">
-      <% unless @posts ==nil %>
+      <% unless @posts.empty? %>
         <%=render 'shared/table' %>
       <% else %>
         <p>This user does not have any posts to display</p>

@@ -1,5 +1,15 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_user!
+  include RelationshipsHelper
+  
+  #for followings posts
+  def index
+    @users = current_user.following.includes(:posts)
+    @posts = order_posts(@users).paginate(:page => params[:page], :per_page => 5)
+    
+  end
+  
+  
   
   def create
     @user = User.find(params[:followed_id])

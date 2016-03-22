@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user == current_user
-        redirect_to edit_user_path(current_user)
+        redirect_to profile_path
     end
     @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:page], per_page: 4) 
   end
@@ -42,9 +42,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path(current_user.id), notice: 'User successfully updated'
+      redirect_to profile_path, notice: 'User successfully updated'
     else
-      redirect_to edit_user_path(current_user.id), alert: 'User not updated. Please try again.'
+      redirect_to profile_path, alert: 'User not updated. Please try again.'
     end
   end
 

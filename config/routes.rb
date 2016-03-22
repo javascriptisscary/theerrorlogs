@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   resources :relationships,  only: [:create, :destroy]
 
  
+  get 'profile', to: 'users#edit'
+  get 'edit_photo', to: 'users#edit_photo'
    
-   
-   
-   
+  get 'friends_posts', to: 'relationships#index' 
    
    root 'welcome#index'
 

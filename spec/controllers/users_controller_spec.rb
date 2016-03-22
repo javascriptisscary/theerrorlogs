@@ -96,7 +96,7 @@ RSpec.describe UsersController, type: :controller do
     describe 'GET own #show page' do
       it 'redirects to #edit'do
         get :show, id: @user.id
-        expect(response).to redirect_to edit_user_path
+        expect(response).to redirect_to profile_path
       end
     end
 
@@ -124,6 +124,9 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
+    
+  
+    
 
     describe "GET #edit_photo" do
       it "returns http success" do
