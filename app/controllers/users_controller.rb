@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user= current_user
+    @user = current_user
     @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
@@ -42,9 +42,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render :edit, notice: 'User successfully updated'
+      redirect_to edit_user_path(current_user.id), notice: 'User successfully updated'
     else
-      render :edit, alert: 'User not updated. Please try again.'
+      redirect_to edit_user_path(current_user.id), alert: 'User not updated. Please try again.'
     end
   end
 
@@ -63,6 +63,7 @@ class UsersController < ApplicationController
     @title = "Following"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page], per_page: 4)
+    @following = true
     render '/shared/_show_follow'
   end
 
@@ -70,6 +71,7 @@ class UsersController < ApplicationController
     @title = "Followers"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page], per_page: 4)
+    @following = false
     render '/shared/_show_follow'
   end
   

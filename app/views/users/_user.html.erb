@@ -8,10 +8,13 @@
         <td>
           <%= user.full_name %>
         </td>
+        <% if @following ==true %>
         <td>
-         <% if user == current_user || @user == current_user %>
-           <%= link_to "delete", user, method: :delete, class: "btn btn-danger",
-                                  data: { confirm: "You sure?" } %>
-         <% end %>
+          <% if @user == current_user %>
+              <%= link_to 'UnFollow', relationship_path(current_user.active_relationships.find_by(followed_id: user.id)),
+                  method: :delete, class: "btn btn-md btn-warning" %>
+          <% end %>
+          
         </td>
+        <% end %>
     </tr>

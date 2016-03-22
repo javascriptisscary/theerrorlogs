@@ -151,7 +151,7 @@ RSpec.describe UsersController, type: :controller do
         puts @user.attributes
         put :update, id: @user, user: {email: "ladeda@example.com"}
         @user.reload
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
         expect(@user.email).to eql "ladeda@example.com"
       end
     end

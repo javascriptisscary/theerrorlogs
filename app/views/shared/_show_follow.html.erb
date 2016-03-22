@@ -3,7 +3,9 @@
 <div class="row">
   <aside class="col-xs-12 col-md-4">
     <div class="user_info">
-      <%=image_tag @user.avatar(:medium), class: "profile" %>
+      <%= link_to @user do %>
+        <%=image_tag @user.avatar(:medium), class: "profile" %>
+      <% end %>
       <h1><%= @user.full_name %></h1>
       <span><%= link_to "view my profile", @user %></span>
       <span><b>Posts:</b> <%= @user.posts.count %></span>
