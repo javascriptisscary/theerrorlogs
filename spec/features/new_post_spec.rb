@@ -11,7 +11,7 @@ describe "User makes new Post" do
   end
 
   it "makes a new post and edits it" do
-    visit user_path(@user.id)
+    visit profile_path
     click_link 'New Post'
     
      within("#new-title") do
@@ -40,12 +40,6 @@ describe "User makes new Post" do
 
 
 
+
+
 end
-  
-  
-    
-  
-
-
-
-
