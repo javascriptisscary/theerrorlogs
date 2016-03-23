@@ -60,6 +60,7 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
 
+
 /* Colors for displayed posts */
 .wysiwyg-color-black {color: black;}
 .wysiwyg-color-silver {color: silver;}
@@ -78,3 +79,16 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 .wysiwyg-color-teal {color: teal;}
 .wysiwyg-color-aqua {color: aqua;}
 .wysiwyg-color-orange {color: orange;}
+
+   /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      .post {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      
+      .post-info {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }

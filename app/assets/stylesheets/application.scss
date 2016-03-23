@@ -10,10 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require bootstrap-wysihtml5
- */
+ *
+ *
+ * */
+
+
+$font-size-base: 17px !default;
+$line-height-base: 1.6 !default;
+$link-hover-decoration: none;
+$font-family-sans-serif: "Nato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "navbar.scss";
+ @import "pagination.scss";
+ @import "welcome.scss";
+ @import "posts.scss";
+ @import "users.scss";
+ @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+ 
+
 
 body {
   padding-top: 50px;
@@ -45,3 +63,4 @@ body {
 .garamond {
   font-family: 'EB Garamond', "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+

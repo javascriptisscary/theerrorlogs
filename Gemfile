@@ -30,6 +30,8 @@ gem "paperclip", '~> 4.3'
 
 gem 'will_paginate', '~> 3.0.6'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
 group :development, :test do
 
   gem 'capybara'
