@@ -3,7 +3,7 @@
 <div class="row">
   <aside class="col-xs-12 col-md-4">
     <div class="user_info">
-      <%= link_to @user do %>
+      <%= link_to @user, data: { no_turbolink: true } do %>
         <%=image_tag @user.avatar(:medium), class: "profile" %>
       <% end %>
       <h1><%= @user.full_name %></h1>

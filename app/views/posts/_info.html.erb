@@ -1,8 +1,8 @@
 <footer class="container post-info garamond">
-  <%= link_to user_path(post.user_id), class: "thumb-link" do%>
+  <%= link_to user_path(post.user_id), data: { no_turbolink: true }, class: "thumb-link" do%>
     <%= image_tag post.user.avatar(:thumb), class: "img-circle thumb" %>
   <%end%>
-  <%= link_to post.user.full_name, user_path(post.user), class: "info-pad" %>
+  <%= link_to post.user.full_name, user_path(post.user), class: "info-pad", data: { no_turbolink: true } %>
   <% if user_signed_in? %>
     <% if post.user_id == current_user.id %>
       <%= link_to 'Edit Post', edit_post_path(post), class: 'info-edit' %>

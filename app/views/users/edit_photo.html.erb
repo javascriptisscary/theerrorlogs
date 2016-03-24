@@ -3,7 +3,7 @@
    <%= image_tag @user.avatar(:medium), id: "profile" %>
    <%= form_for @user, html: { multipart: true } do |form| %>
   <%= form.file_field :avatar %>
-  <%= form.submit 'Submit Image', class: "btn btn-primary", id:"submit-edit" %> 
+  <%= form.submit 'Submit Image', class: "btn btn-primary", id:"submit-edit", data: { no_turbolink: true } %> 
 <% end %>
    
 </section>

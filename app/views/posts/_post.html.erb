@@ -1,6 +1,6 @@
 
 <% if can? :read, post %>
-   <h2><strong><%= link_to post.title, post_path(post.id) %></strong></h2>
+   <h1><strong><%= link_to post.title, post_path(post.id) %></strong></h1>
    <%= post.content.html_safe %>
 <% end %>
 <% if can?:edit, post %>
