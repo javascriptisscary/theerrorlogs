@@ -3,11 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.new-comment {
+    margin-top:100px;
+    
+}
+
+.new-comment h3 {
+    font-size:1.5em;
+    margin-bottom:50px;
+    font-weight: 600;
+  }
+
+.comment-section {
+    
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    margin-bottom: 80px;
+    
+}
+
 .comment {
-    border-top: 1px solid rgba(51, 51, 51, 0.1);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom:100px;
+    
+    padding-top: 10px;
+    
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom:20px;
+    font-size: .9em;
+    background-color: #f7f7f7;
    
 }
 
@@ -17,14 +39,20 @@
 }
 
 .comment-info {
-    font-family: 'EB Garamond', "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+    color:rgba(51,51,51,0.7);
+    background-color: #f7f7f7;
+    padding:1% 1%;
+    margin-top: 0;
+    
+    font-size: 1em;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+
     
     
 }
 
-.comment-info a {
-    color: black;
-}
+
 
 .comment-name {
     
@@ -54,6 +82,20 @@ hr {
   .new-comment {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  
+  
+  .comment-info {
+    font-size:1.25em;
+
+  }
+  
+  .comment {
+    font-size: 1em;
+  }
+  
+  .new-comment h3 {
+    font-size:1.75em;
   }
 
 }

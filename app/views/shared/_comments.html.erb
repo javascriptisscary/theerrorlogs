@@ -1,10 +1,11 @@
 <% comments.each do |comment| %>
+<div class= "comment-section">
 <div class="comment">
 
   <%=sanitize comment.content%>
 
 </div>
-<div class="post-info garamond">
+<div class="comment-info garamond">
   <%= link_to user_path(comment.user_id), data: { no_turbolink: true }, class: "thumb-link" do%>
     <%= image_tag comment.user.avatar(:thumb), class: "img-circle thumb" %>
   <%end%>
@@ -16,6 +17,7 @@
   <% end %>
   <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
   <%= comment.created_at %>
+</div>
 </div>
 </div>
 <% end %>
