@@ -57,7 +57,8 @@ $(document).on('page:change', function(){
     }
     
     blog_images_responsive();
-    camera_icon();
+    //The load event is sent to an element when it and all sub-elements have been completely loaded
+    ('#profile').load(camera_icon());
   
   
 })
