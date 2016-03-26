@@ -41,7 +41,23 @@ $(document).on('page:change', function(){
    
   }; //end blog_images_responsive
   
-  blog_images_responsive();
+  
+  
+  
+  //place camera icon inside users#edit image tactfully by changing div size
+    function camera_icon() {
+      var image_width = $("#profile").width();
+      var image_height  = $("#profile").height();
+      
+    
+      console.log(image_width, image_height);
+      
+      $("#profile-edit-photo").width(image_width);
+      $("#profile-edit-photo").height(image_height);
+    }
+    
+    blog_images_responsive();
+    camera_icon();
   
   
 })

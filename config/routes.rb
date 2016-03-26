@@ -23,6 +23,7 @@ Rails.application.routes.draw do
    
   get 'friends_posts', to: 'relationships#index' 
    
+  post 'posts/show', to: 'comments#create' 
    root 'welcome#index'
 
 end 

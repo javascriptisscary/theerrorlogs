@@ -40,21 +40,4 @@
     <li><%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %></li>
   </ul>
 </section>
-<script>
-  $( document ).ready(function() {
- //place camera icon inside users#edit image tactfully by changing div size
-    function camera_icon() {
-      var image_width = $("#profile").width();
-      var image_height  = $("#profile").height();
-      
-    
-      console.log(image_width, image_height);
-      
-      $("#profile-edit-photo").width(image_width);
-      $("#profile-edit-photo").height(image_height);
-    }
-    
-    camera_icon();
-    
-    });
-</script>
+
