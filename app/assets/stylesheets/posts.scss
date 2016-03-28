@@ -22,6 +22,9 @@ article {
 article a{
   color: black;
 }
+
+
+
 .post-info{
     color:rgba(51,51,51,0.7);
     background-color: #f7f7f7;
@@ -86,6 +89,19 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 .wysiwyg-color-aqua {color: aqua;}
 .wysiwyg-color-orange {color: orange;}
 
+
+
+/* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      
+      /* size of the new-post content box */
+      #post_content {
+        height: 500px;
+      }
+    }
+
+
+
    /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
       .post {
@@ -102,5 +118,8 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
       
       .post h1{
         font-size: 2em;
+        
       }
+      
+      
     }
