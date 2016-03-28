@@ -12,7 +12,11 @@
 
 <section class="container new-comment">
   <% unless @comments.empty? %>
-    <h3><%=@comments.length %> comments on "<%=@post.title%>" </h3>
+    <% if @comments.length == 1 %>
+      <h3><%=@comments.length %> comment on "<%=@post.title%>" </h3>
+    <%else %>
+      <h3><%=@comments.length %> comments on "<%=@post.title%>" </h3>
+    <% end%>
     <%= render 'shared/comments', comments: @comments %>
   <% end %>
   <hr></hr>
