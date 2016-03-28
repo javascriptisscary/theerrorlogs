@@ -18,7 +18,9 @@
 $font-size-base: 18px !default;
 $line-height-base: 1.7 !default;
 $link-hover-decoration: none;
-$font-family-sans-serif: "Nato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Noto Serif", "Times New Roman", Times, serif;
+$font-family-base: $font-family-serif;
 
 
 
@@ -59,9 +61,10 @@ body {
     padding: 5px;
 }
 
-
-
-.garamond {
-  font-family: 'EB Garamond', "Helvetica Neue",Helvetica,Arial,sans-serif;
+.btn {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+
+
 

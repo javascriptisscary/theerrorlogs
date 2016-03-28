@@ -13,7 +13,7 @@
 }
 
 .container h1 {
-    
+    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-bottom: 20px;
 }
 
@@ -36,10 +36,10 @@ section {
 
 .glyphicon-camera {
     position: absolute;
-    color: rgba(255,255,255,.7);
+    color: rgba(255,255,255,.5);
     font-size: 2em;
     left: 5%;
-    top: 72%;
+    top: 68.5%;
     z-index: 10000
 }
 
@@ -75,9 +75,14 @@ margin: 10px auto;
 }
 
 
+.stats {
+    margin-bottom: 20px;
+}
+
 .profile-list {
     list-style-type:none;
     float:right;
+    margin-top: 30px;
 }
 
 #user_avatar {
