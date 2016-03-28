@@ -11,5 +11,11 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe PostsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "no_time" do
+    it "returns true" do
+      helper.no_time("2016-03-23 16:20:30 UTC").should eq("03/23/2016")
+  
+    end
+  end
 end
