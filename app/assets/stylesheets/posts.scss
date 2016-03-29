@@ -32,7 +32,7 @@ article a{
     padding: 1% 1%;
     margin-top: 0;
     margin-bottom: 50px;
-    font-size:1.25em;
+    font-size:1em;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -102,9 +102,13 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
       #post_content {
         height: 500px;
       }
+      
+      
+      .post-info {
+        font-size: 1.25em;
+      }
+
     }
-
-
 
    /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {

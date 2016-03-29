@@ -5,6 +5,10 @@ class RelationshipsController < ApplicationController
   #for followings posts
   def index
     @users = current_user.following.includes(:posts)
+    if @users.empty?
+      @users = User.all
+      flash[:alert] = "Currently not following any users. Here's some of our most recents posts"
+    end
     @posts = order_posts(@users).paginate(:page => params[:page], :per_page => 5)
     
   end

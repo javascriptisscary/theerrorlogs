@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   
   def index
     @users = current_user.following.includes(:posts).reverse
-    
+    if @users.empty?
+    render :index, flash: "Currently not following any users. Here's some of our most recents posts"
+    end
   end
 
   def create

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe RelationshipsController, type: :controller do
   
   
-  describe 'Relationships#Index' do
+  describe 'Relationships#Index (friends_posts)' do
     
     
     context 'user not signed in' do
