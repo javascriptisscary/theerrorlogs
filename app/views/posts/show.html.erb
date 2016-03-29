@@ -21,12 +21,16 @@
   <% end %>
   <hr></hr>
   <h3>Leave a Comment</h3>
-    <%= form_for :comment, url: comments_path, html: {class: "comment-form"} do |f| %>
-      <div class="form-group">
-        <%= f.label :comment %>
-        <%= f.text_area :content, class: "form-control", required: true, maxlength: 2000 %>
-      </div>
-      <%=  f.hidden_field(:post_id, value: @post.id ) %>
-      <%= f.submit "Post Comment", class:"btn btn-default", data: { no_turbolink: true } %>
-    <%end%>
+  <% if signed_in? %>
+      <%= form_for :comment, url: comments_path, html: {class: "comment-form"} do |f| %>
+        <div class="form-group">
+          <%= f.label :comment %>
+          <%= f.text_area :content, class: "form-control", required: true, maxlength: 2000 %>
+        </div>
+        <%=  f.hidden_field(:post_id, value: @post.id ) %>
+        <%= f.submit "Post Comment", class:"btn btn-default", data: { no_turbolink: true } %>
+      <% end %>  
+  <% else %>
+    <p>You must sign in to leave a comment</p>    
+  <% end %>
 </section>

@@ -1,23 +1,23 @@
 <% comments.each do |comment| %>
 <div class= "comment-section">
-<div class="comment">
+  <div class="comment">
 
   <%=sanitize comment.content%>
 
-</div>
-<div class="comment-info garamond">
-  <%= link_to user_path(comment.user_id), data: { no_turbolink: true }, class: "thumb-link" do%>
-    <%= image_tag comment.user.avatar(:thumb), class: "img-circle thumb" %>
-  <%end%>
-  <%= link_to comment.user.full_name, user_path(comment.user), class: "info-pad", data: { no_turbolink: true } %>
-  <% if user_signed_in? %>
-    <% if comment.user_id == current_user.id %>
-      <%= link_to 'Delete Comment', comment_path(comment), method: :delete, class: 'info-edit' %>
+  </div>
+  <div class="comment-info">
+    <%= link_to user_path(comment.user_id), data: { no_turbolink: true }, class: "thumb-link" do%>
+      <%= image_tag comment.user.avatar(:thumb), class: "img-circle thumb" %>
+    <%end%>
+    <%= link_to comment.user.full_name, user_path(comment.user), class: "info-pad", data: { no_turbolink: true } %>
+    <% if user_signed_in? %>
+      <% if comment.user_id == current_user.id %>
+        <%= link_to 'Delete Comment', comment_path(comment), method: :delete, class: 'info-edit' %>
+      <% end %>
     <% end %>
-  <% end %>
-  <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
-  <%= no_time(comment.created_at) %>
-</div>
+    <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
+    <%= no_time(comment.created_at) %>
+  </div>
 </div>
 </div>
 <% end %>

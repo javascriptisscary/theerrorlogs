@@ -3,9 +3,25 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 
+describe "User not signed in" do
+  before do
+    @user= create(:user)
+    @post= create(:post, user_id: @user.id)
+  end
+  
+  it "doesn't show a comment box" do
+    visit post_path(@post.id)
+    expect(page).to have_content "You must sign in to leave a comment"
+  end
+
+end
+
+
+
+
 describe "User makes a new comment" do
   
-  before :each do
+  before do
    @user = create(:user, email: 'user@example.com', password: 'password', first_name: 'John', last_name: "Smith")
    login_as(@user, :scope => :user)
    @post = create(:post, user_id: @user.id, content: "I'm a post made for features testing. Comments shall work please! Please, please, please work." )
@@ -33,6 +49,7 @@ describe "User makes a new comment" do
     end
   
   end
+
 
 
 
