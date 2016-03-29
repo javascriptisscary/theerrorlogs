@@ -13,7 +13,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body <%= yield(:body_attributes) %>>
   
 
 <nav class="navbar navbar-default navbar-fixed-top">

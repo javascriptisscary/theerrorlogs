@@ -1,8 +1,10 @@
+<%= content_for(:body_attributes) do %>data-no-turbolink="true"<% end %>
+
 <section class="container">
   <h1 class="text-center"><%=@user.full_name %></h1>
   
   <div class="row">
-    <div class="col-sm-6 col-xs-12">
+    <div class="col-sm-6 col-xs-12" id="photo-holder">
       <div id="profile-edit-photo">
         <%= link_to edit_photo_user_path(current_user) do %>
           <%= image_tag @user.avatar(:medium), id: "profile", data: { toggle: 'tooltip', placement: "right" }, title: "Change profile photo" %>
@@ -40,4 +42,24 @@
     <li><%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %></li>
   </ul>
 </section>
+<script>
+  $( window ).load(function() {
+ //place camera icon inside users#edit image tactfully by changing div size
+    function camera_icon() {
+      var image_width = $("#profile").width();
+      var image_height  = $("#profile").height();
+      
+    
+      console.log(image_width, image_height);
+      console.log("I'm running!");
+      $("#profile-edit-photo").css({'height': image_height, "width": image_width});
+      
+    }
+    
+    
+    
+    //The load event is sent to an element when it and all sub-elements have been completely loaded
+    camera_icon();
+  });
+</script>
 
