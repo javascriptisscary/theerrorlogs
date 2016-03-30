@@ -12,6 +12,7 @@
  *
  *
  *
+ *
  * */
 
 
@@ -23,16 +24,19 @@ $font-family-serif: "Noto Serif", "Times New Roman", Times, serif;
 $font-family-base: $font-family-serif;
 
 
-
+ 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
  @import "navbar.scss";
  @import "pagination.scss";
  @import "welcome.scss";
  @import "comments.scss";
  @import "posts.scss";
  @import "users.scss";
- @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+ 
+
+
  
 
 
