@@ -8,6 +8,11 @@
     
 }
 
+.profile {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #submit-edit {
     margin-top:2%;
 }
@@ -18,9 +23,9 @@
 }
 
 section {
-    margin-top:80px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    margin-top:20px;
+    padding-bottom: 40px;
+    padding-top: 20px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -28,10 +33,16 @@ section {
     margin-bottom: 0;
 }
 
+
+
 .edit-profile-link {
-    margin-top: 20px;
+    margin-top: 10px;
+    text-align:center;
     
-    
+}
+
+#profile-edit-photo {
+    margin: 0 auto;    
 }
 
 .glyphicon-camera {
@@ -70,19 +81,24 @@ margin: 10px auto;
     
 }
 
-#following {
-    margin-top: 15px;
-}
 
 
 .stats {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .profile-list {
     list-style-type:none;
-    float:right;
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.profile-list li {
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 #user_avatar {
@@ -91,4 +107,66 @@ margin: 10px auto;
 
 .recent-comments {
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.recent-posts {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.follow-button-profile {
+    text-align: center;
+}
+
+.profile-name {
+    text-align: center;
+}
+
+ /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      .recent-comments {
+         width: 75%;
+      }
+      .recent-posts {
+         width: 75%;
+      }
+      
+      .digg_pagination {
+        margin-left: 67.3%;
+      }
+    
+      section {
+        margin-top:80px;
+      }
+    
+    
+      .profile-name {
+        text-align: left;
+       }
+       
+      .follow-button-profile {
+        text-align: left;
+       }
+    
+      .stats {
+        text-align: left;
+       }
+    
+      .edit-profile-link {
+        text-align:left;;
+    
+    }
+    
+    }
+
+
+  @media only screen and (min-width : 1200px) {
+
+
+      .digg_pagination {
+        margin-left: 70.9%;
+      }
+  }

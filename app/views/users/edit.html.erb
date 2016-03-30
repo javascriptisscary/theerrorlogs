@@ -1,39 +1,51 @@
 <%= content_for(:body_attributes) do %>data-no-turbolink="true"<% end %>
 
 <section class="container">
-  <h1 class="text-center"><%=@user.full_name %></h1>
+  
   
   <div class="row">
     <div class="col-sm-6 col-xs-12" id="photo-holder">
       <div id="profile-edit-photo">
         <%= link_to edit_photo_user_path(current_user) do %>
-          <%= image_tag @user.avatar(:medium), id: "profile", data: { toggle: 'tooltip', placement: "right" }, title: "Change profile photo" %>
+          <%= image_tag @user.avatar(:medium), id: "profile", class: "img-circle img-responsive", data: { toggle: 'tooltip', placement: "right" }, title: "Change profile photo" %>
         <% end %>
         <span class="glyphicon glyphicon-camera"></span>
       </div>
-      <div id ="following"> 
-        <div class="stats">
-          <strong class="stat">
-            <%= link_to following_user_path(@user.id) do %>
-              <%= @user.following.count %>
-            <% end %>
-          </strong>
-          Following |
-          <strong class="stat">
-            <%= link_to followers_user_path(@user.id) do %>
-              <%= @user.followers.count %>
-            <% end %>
-          </strong>
-          Followers
-        </div>
-      </div>
     </div>
-    <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
+        <h1 class="profile-name"><%=@user.full_name %></h1>
+        <div id ="following"> 
+          <div class="stats">
+            <strong class="stat">
+              <%= link_to following_user_path(@user.id) do %>
+                <%= @user.following.count %>
+              <% end %>
+            </strong>
+              Following |
+            <strong class="stat">
+              <%= link_to followers_user_path(@user.id) do %>
+                <%= @user.followers.count %>
+              <% end %>
+            </strong>
+            Followers
+          </div>
+        </div>
+        <div class="edit-profile-link">
+          <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-lg btn-primary" %>
+        </div>
+        </div>
+    <div class="col-xs-12">
       <% unless @posts.empty? %>
         <%= render 'shared/table' %>
       <% else %>
         <p>You do not yet have any posts to display.</p>
       <% end%>
+      <ul class="profile-list">
+        <li><%=link_to 'Find Users', users_path, class: "btn btn-default" %></li>
+        <li><%=link_to "Following Posts", friends_posts_path, class: "btn btn-default" %></li>
+        <li><%=link_to "New Post", new_post_path, class: "btn btn-lg btn-success" %></li>
+        
+      </ul>
       <% unless @comments.empty? %>
         <%= render 'shared/recent_comments_table' %>
       <% else %>
@@ -41,10 +53,6 @@
       <% end%>
     </div>
   </div>
-  <ul class="profile-list">
-    <li><%=link_to 'Find Users', users_path, class: "link-to-users-index" %></li>
-    <li><%= link_to 'Edit Profile', edit_user_registration_path, class: "edit-profile-link btn btn-success" %></li>
-  </ul>
 </section>
 <script>
   $( window ).load(function() {

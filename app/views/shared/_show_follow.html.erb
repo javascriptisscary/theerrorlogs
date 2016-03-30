@@ -6,9 +6,10 @@
       <%= link_to @user, data: { no_turbolink: true } do %>
         <%=image_tag @user.avatar(:medium), class: "profile" %>
       <% end %>
-      <h1><%= @user.full_name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>Posts:</b> <%= @user.posts.count %></span>
+      <div class="profile-name">
+        <h1><%= @user.full_name %></h1>
+        <span><b>Posts:</b> <%= @user.posts.count %></span>
+      </div>
     </div>
     <div class="stats">
       <%= render 'shared/stats' %>
