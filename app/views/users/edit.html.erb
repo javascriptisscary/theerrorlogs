@@ -34,7 +34,11 @@
       <% else %>
         <p>You do not yet have any posts to display.</p>
       <% end%>
-      
+      <% unless @comments.empty? %>
+        <%= render 'shared/recent_comments_table' %>
+      <% else %>
+        <p>You do not yet have any comments to display.</p>
+      <% end%>
     </div>
   </div>
   <ul class="profile-list">

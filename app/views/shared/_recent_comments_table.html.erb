@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped recent-comments">
+        <thead>
+          <tr>
+            <td  colspan="2" style="font-size:20px;">Recent Comments</td>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <% @comments.each do |comment| %>
+              <tr>
+                <td><%=link_to comment_preview(comment.content), post_path(comment.post_id), title: "Commented on: #{comment.post.title} by #{comment.post.user.full_name}",  data: { toggle: 'tooltip', placement: "left" } %></td>
+                <td><%= remove_time(comment)%></td>
+              </tr>
+          
+            <% end %>
+          
+        </tbody>
+        
+</table>
+<%= will_paginate @comments, param_name: 'comments_page', page_links: false, class: "digg_pagination" %>

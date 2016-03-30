@@ -1,7 +1,7 @@
 <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <td class="garamond" colspan="2" style="font-size:20px;">Recent Posts</td>
+            <td colspan="2" style="font-size:20px;">Recent Posts</td>
           </tr>
         </thead>
         <tbody>
@@ -17,4 +17,4 @@
         </tbody>
         
 </table>
-<%= will_paginate @posts, page_links: false, class: "digg_pagination" %>
+<%= will_paginate @posts, param_name: 'posts_page', page_links: false, class: "digg_pagination" %>
