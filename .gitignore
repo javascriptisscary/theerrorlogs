@@ -11,7 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
-/public
+
 
 #ignore images from users on localhost
 **/system/
