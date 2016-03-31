@@ -33,8 +33,12 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+
+
+
 gem 'rails_12factor', group: :production
 
+gem 'aws-sdk', '~> 1.6', group: :production
 
 group :development, :test do
 
