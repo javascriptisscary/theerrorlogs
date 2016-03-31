@@ -4,8 +4,10 @@ require 'rails_helper'
 
 describe 'User goes to homepage' do
   before do
-    @post =create(:post)
-    @post1 = create(:post, title: "I need Help", content: "What a wonderful world we live in. Full of joy and happiness and bugs.")
+    @user = create(:user)
+    @user1 = create(:user)
+    @post =create(:post, user_id: @user.id)
+    @post1 = create(:post, title: "I need Help", content: "What a wonderful world we live in. Full of joy and happiness and bugs.", user_id: @user1.id)
   end
 
 

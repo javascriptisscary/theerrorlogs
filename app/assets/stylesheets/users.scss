@@ -47,16 +47,16 @@ section {
 
 .glyphicon-camera {
     position: absolute;
-    color: rgba(255,255,255,.5);
-    font-size: 1.5em;
-    left: 5%;
-    top: 68.5%;
+    color: rgba(255,255,255,.4);
+    left: 63%;
+    font-size: 1.25em;
+    top: 80%;
     z-index: 10000
 }
 
 .log-in {
-    width: 40%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .users-follow {
@@ -90,7 +90,7 @@ margin: 10px auto;
 
 .profile-list {
     list-style-type:none;
-    margin-top: 30px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -125,8 +125,15 @@ margin: 10px auto;
     text-align: center;
 }
 
+
+
+
  /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
+      
+      .log-in {
+         width: 40%;
+      }
       .recent-comments {
          width: 75%;
       }
@@ -159,6 +166,10 @@ margin: 10px auto;
         text-align:left;;
     
     }
+    
+    .glyphicon-camera {
+            left: 59%;
+         }
     
     }
 

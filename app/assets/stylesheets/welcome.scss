@@ -16,6 +16,29 @@
 }
 
 #hero {
-    background-color: rgba(241,241,241,0.5);
+    background-color: white;
    
+}
+
+
+#community {
+    font-size:4em;
+    font-weight: 700;
+    font-family: "Noto Sans";
+    transition: 3s ease;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+#words {
+    text-decoration: none;
+    -moz-transition: text-decoration 5s ease;
+    -webkit-transition: text-decoration 5s ease;
+    transition: text-decoration 5s ease;
+    font-weight: 900;
+    
+}
+
+#blog {
+    font-family: "Noto Sans";
+    font-weight: 700;
 }

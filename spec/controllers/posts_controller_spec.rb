@@ -48,9 +48,9 @@ RSpec.describe PostsController, type: :controller do
     end
    
     describe "GET #index" do
-      it "returns http success" do
+      it "returns http redirect" do
         get :index
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
       end
     end 
  

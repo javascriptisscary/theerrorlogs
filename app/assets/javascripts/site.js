@@ -42,6 +42,10 @@ $(document).on('page:change', function(){
   }; //end blog_images_responsive
   
   
+ 
+    
+    
+  
   
   
  

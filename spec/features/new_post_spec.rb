@@ -12,8 +12,9 @@ describe "User makes new Post" do
 
   it "makes a new post and edits it" do
     visit profile_path
-    click_link 'New Post'
-    
+    within(".navbar") do
+      click_link 'New Post'
+    end
      within("#new-title") do
       fill_in 'Title', with: 'New Random Blog Post'
     end

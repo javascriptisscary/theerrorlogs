@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:show]
   load_and_authorize_resource
   
   def index
     @users = current_user.following.includes(:posts).reverse
+    
     if @users.empty?
-    render :index, flash: "Currently not following any users. Here's some of our most recents posts"
+      render :index, flash: "Currently not following any users. Here's some of our most recents posts"
     end
+    
   end
 
   def create

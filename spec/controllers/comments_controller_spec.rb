@@ -26,7 +26,7 @@ RSpec.describe CommentsController, type: :controller do
   
   
   
-  context "User logger in" do
+  context "User logged in" do
     before do
         @user = create(:user)
         sign_in @user
@@ -63,7 +63,7 @@ RSpec.describe CommentsController, type: :controller do
      end
   
       #working on this one
-      it " will let user delete comment from a diff user on own blog post" do
+      it " will let owner of blog post, delete comment from a diff user" do
         expect {
           delete :destroy, id: @comment1.id
         }.to change(Comment, :count).by(-1) 

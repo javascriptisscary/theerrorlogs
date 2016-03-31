@@ -35,21 +35,22 @@
         </div>
         </div>
     <div class="col-xs-12">
-      <% unless @posts.empty? %>
-        <%= render 'shared/table' %>
-      <% else %>
-        <p>You do not yet have any posts to display.</p>
-      <% end%>
+      
       <ul class="profile-list">
         <li><%=link_to 'Find Users', users_path, class: "btn btn-default" %></li>
         <li><%=link_to "Following Posts", friends_posts_path, class: "btn btn-default" %></li>
         <li><%=link_to "New Post", new_post_path, class: "btn btn-lg btn-success" %></li>
         
       </ul>
+      <% unless @posts.empty? %>
+        <%= render 'shared/table' %>
+      <% else %>
+        <p class="text-center">You do not yet have any posts to display.</p>
+      <% end%>
       <% unless @comments.empty? %>
         <%= render 'shared/recent_comments_table' %>
       <% else %>
-        <p>You do not yet have any comments to display.</p>
+        <p class="text-center">You do not yet have any comments to display.</p>
       <% end%>
     </div>
   </div>
@@ -62,8 +63,7 @@
       var image_height  = $("#profile").height();
       
     
-      console.log(image_width, image_height);
-      console.log("I'm running!");
+      
       $("#profile-edit-photo").css({'height': image_height, "width": image_width});
       
     }

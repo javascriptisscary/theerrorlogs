@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.2"
 
 
 
@@ -31,6 +32,9 @@ gem "paperclip", '~> 4.3'
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
 
