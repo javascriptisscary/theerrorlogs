@@ -10,6 +10,7 @@ class Ability
           can :manage, Post, user_id: user.id
           can :manage, Comment, user_id: user.id
           can :read, :all
+          can :manage, :all if user.admin ==true
   
   end
 end

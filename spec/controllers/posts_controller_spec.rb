@@ -157,6 +157,62 @@ RSpec.describe PostsController, type: :controller do
   
   
   
+  
+  
+  context "User is admin" do
+    before do
+      @admin = create(:user, admin: true)
+      sign_in @admin
+      @post = create(:post)
+    end
+  
+  
+  describe " GET #edit" do
+    it "gets a diff user's edit" do    
+        get :edit, id: @post.id
+        expect(response).to have_http_status(:success)
+      end
+    end
+    
+     describe "DELETE #destroy" do
+       it "deletes the diff user's post" do  
+          expect {
+          delete :destroy, id: @post.id
+        }.to change(Post, :count).by(-1) 
+       end
+     end
+    
+  
+  
+  describe "POST #update"
+    let(:attr) do 
+          { :title => 'new title', :content => 'i am admin i am admin i am admin i am admin i am admin i am admin i am admin admin admin admin' }
+       end
+    
+    it "updates the other user's post" do
+         put :update, id: @post.id, post: attr
+         @post.reload
+         expect(response).to be_success
+         expect(@post.title).to eql attr[:title]
+         expect(@post.content).to eql attr[:content]
+  
+  
+    end
+
+end # end admin
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   describe "User logged in and NOT owner of post" do
       
       before do

@@ -38,6 +38,8 @@ RSpec.describe CommentsController, type: :controller do
         @post1 = create(:post, user_id: @user.id)
         @user1 = create(:user)
         @comment1 = create(:comment, user_id: @user1.id, post_id: @post1.id)
+        @comment2 = create(:comment)
+        @admin = create(:user, admin: true)
       end
   
   
@@ -62,6 +64,8 @@ RSpec.describe CommentsController, type: :controller do
        end
      end
   
+  
+  
       #working on this one
       it " will let owner of blog post, delete comment from a diff user" do
         expect {
@@ -69,6 +73,20 @@ RSpec.describe CommentsController, type: :controller do
         }.to change(Comment, :count).by(-1) 
   
       end
+  
+  
+  context " user is admin" do
+    before do
+      @admin = create(:user, admin: true)
+      sign_in @admin
+    end
+  
+    it "will let admin destroy different user's post" do
+      expect {
+        delete :destroy, id: @comment2.id
+      }.to change(Comment, :count).by(-1) 
+    end
+  end
   
   
   

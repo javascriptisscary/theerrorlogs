@@ -197,7 +197,39 @@ RSpec.describe UsersController, type: :controller do
   end # end user logged in
   
   
- 
+   context "User is admin" do
+     before do
+       @admin = create(:user, admin: true)
+       sign_in @admin
+       @user1 = create(:user)
+     end
+     
+     describe "PUT #update" do
+       
+        it "will have authorization" do
+          should be_able_to(:update, @user1)
+        end
+      end
+     
+     describe "GET #Edit" do
+      
+        it "will have http status 200" do
+          expect{get :edit, id: @user1.id}.to have_http_status(:success)
+        end
+      end
+     
+     
+     describe "DELETE #destroy" do
+        it "deletes the diff user" do  
+        expect {
+          delete :destroy, id: @user1.id
+        }.to change(User, :count).by(-1) 
+       end
+     end
+     
+   
+   
+   end
  
  
  
