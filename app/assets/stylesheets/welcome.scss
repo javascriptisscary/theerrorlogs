@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .logo {
     margin: 0 auto;
-    padding-top: 12%;
+    padding-top: 40%;
 }
 
 .fluid-container {
@@ -16,7 +16,10 @@
 }
 
 #hero {
-    background-color: white;
+    
+    
+                                
+                                
    
 }
 
@@ -42,3 +45,12 @@
     font-family: "Noto Sans";
     font-weight: 700;
 }
+
+
+/* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      .logo {
+        padding-top: 15%;
+      }
+      
+    }
