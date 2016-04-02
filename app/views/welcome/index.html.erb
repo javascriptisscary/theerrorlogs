@@ -1,5 +1,10 @@
 <div class="fluid-container" id="hero">
   <%=image_tag "black.png", class: "img-responsive logo" %>
-  <h3 class="text-center">A community of web developers who blog</h3>
+  <h3 class="text-center">A community of students becoming developers, designers and better humans.</h3>
+  <p class="text-center">We blog our victories and our fears.</p>
+  <div class="text-center" id="arrow"> 
+    <span class="glyphicon glyphicon-triangle-bottom"></span>
+    <p><i>See some of our latest posts</i></p>
+  </div>
 </div>
 <%=render 'shared/posts', posts: @posts %>

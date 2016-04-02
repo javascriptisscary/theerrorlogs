@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .logo {
     margin: 0 auto;
-    padding-top: 40%;
+    padding-top: 30%;
 }
 
 .fluid-container {
@@ -15,9 +15,9 @@
    
 }
 
-#hero {
+#hero h3 {
     
-    
+    font-size: 1.2em;
                                 
                                 
    
@@ -47,10 +47,54 @@
 }
 
 
+
+
+.glyphicon-triangle-bottom {
+    font-size: 2em;
+    color: rgba(0,0,0,0.5);
+    
+}
+
+#arrow {
+    position: absolute;
+    top: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+
+
+
+ @media only screen and (min-width : 360px) {
+    .logo {
+        padding-top: 40%;
+    }
+ }
+ 
+ /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+      #hero h3 {
+    
+        font-size: 1.2em;
+      }
+    
+    
+    }
+ 
+
 /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
       .logo {
-        padding-top: 15%;
+        padding-top: 12%;
       }
       
+      #hero h3 {
+    
+        font-size: 1.5em;
+      
+      }
     }

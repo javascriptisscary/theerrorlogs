@@ -4,6 +4,7 @@
     text-shadow: 1px 1px rgba(0,0,0,0.1);
     font-family: "Noto Sans";
     border-right: 1px solid rgba(0,0,0,0.8);
+    /* Transparent borders so transition will function correctly */
     border-bottom: 1px solid rgba(0,0,0,0);
     border-top: 1px solid rgba(0,0,0,0);
     font-weight: 500;
