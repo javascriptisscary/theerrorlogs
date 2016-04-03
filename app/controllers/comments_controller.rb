@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@comment.post_id), notice: 'Comment was successfully created'
     else
-      redirect_to profile_path, alert: 'Post not created. Please try again.'
+      redirect_to :back, alert: 'Comment not created. Please try again.'
     end
      
   end

@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: 'Post was successfully created'
     else
-      redirect_to root_path, alert: 'Post not created. Please try again.'
+      render new_post_path, alert: 'Post not created. Please try again.'
     end
     
   end
@@ -31,6 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
     @comments =@post.comments
+    @comment = Comment.new
   end
   
   def edit
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      render :show, notice: 'Post successfully updated'
+      redirect_to @post, notice: 'Post successfully updated'
     else
       render :edit, alert: 'Post was not updated. Please try again.'
         

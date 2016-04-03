@@ -1,3 +1,5 @@
+
+
 .navbar-default .navbar-nav > li > a {
 
     color: #333333;
@@ -8,6 +10,7 @@
     border-bottom: 1px solid rgba(0,0,0,0);
     border-top: 1px solid rgba(0,0,0,0);
     font-weight: 500;
+  
 }
 
 
@@ -59,7 +62,12 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 
 }
 
-
+.navbar-brand {
+  padding-left: 0;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
 
 
 .navbar-default {
@@ -76,3 +84,31 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
         width: 70%;
     }
 }
+
+
+ /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 360px) {
+      .navbar-brand {
+        width: 75%;
+      }
+    }
+    
+     /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      .navbar-brand {
+        width: 80%;
+      }
+    }
+    
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      
+    }
+    
+    
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+      .navbar-brand {
+        width: 90%;
+      }
+    }

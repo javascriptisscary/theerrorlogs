@@ -4,6 +4,6 @@ class Comment < ActiveRecord::Base
 
   validates :post_id, numericality: { only_integer: true }
   validates :user_id, numericality: { only_integer: true }
-  validates :content, length: { minimum: 2, maxium: 1000 }  
+  validates :content, length: { minimum: 2, maxium: 5000 }  
 
 end

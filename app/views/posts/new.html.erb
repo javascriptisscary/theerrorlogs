@@ -2,13 +2,22 @@
 
 <section class="container">
 <%=form_for @post, url: {action: "create"}, html: {class: "blog-title" } do |f| %>
+  <% if @post.errors.any? %>
+    <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+    <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
   <div class="form-group" id="new-title">
     <%= f.label :title %>
     <%=f.text_field :title, class: "form-control"%>
   </div>
   <div class="form-group" id="new-content">
     <%= f.label :content %>
-    <%=f.text_area :content, class: "wysihtml5 form-control new-post" %> 
+    <%=f.text_area :content, minlength: 50, maxlength: 10000, class: "wysihtml5 form-control new-post" %> 
   </div>
   <div class="form-group">
    <%= f.submit "Submit", class:"btn btn-lg btn-success"%> 
