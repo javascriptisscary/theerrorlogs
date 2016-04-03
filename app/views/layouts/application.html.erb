@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
       </button>
       <%if user_signed_in?%>
-        <%= link_to friends_posts_path, id: 'brand' do %>
+        <%= link_to root_path, id: 'brand' do %>
           <%= image_tag "black.png", class:'navbar-brand img-responsive' %>
         <%end%>
       <% else %>
@@ -36,6 +36,11 @@
       <%end%>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <% if user_signed_in? %>
+        <ul class ="nav navbar-nav navbar-left left-border updates">
+          <li><%= link_to "<span class='glyphicon glyphicon-bell'></span>&nbsp; Updates".html_safe, friends_posts_path%></li>
+        </ul>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, user_path(current_user.id),  data: { no_turbolink: true }, class: "left-border" %></li>

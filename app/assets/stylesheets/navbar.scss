@@ -5,27 +5,33 @@
     color: #333333;
     text-shadow: 1px 1px rgba(0,0,0,0.1);
     font-family: "Noto Sans";
-    border-right: 1px solid rgba(0,0,0,0.8);
-    /* Transparent borders so transition will function correctly */
+    border-right: 1px solid rgba(0,0,0,0.3);
+  
+  /* Transparent borders so transition will function correctly */
     border-bottom: 1px solid rgba(0,0,0,0);
     border-top: 1px solid rgba(0,0,0,0);
     font-weight: 500;
+    transition: all .8s;
+  -webkit-transition: all .8s;
+  -moz-transition: all .8s;
+  -o-transition: all .8s;
+  
   
 }
 
 
 .navbar-default .navbar-nav > li > a:hover{
-  transition: border-bottom .8s;
-  transition: border-top .8s;
-  transition: color .8s;
-  border-bottom: 1px solid rgba(0,0,0,0.8);
-  border-top: 1px solid rgba(0,0,0,0.8);
+  
+  border-top-color: rgba(0,0,0,0.3);
+  border-bottom-color: rgba(0,0,0,0.3);
   color: #337ab7
 }
 
 .left-border {
-    border-left: 1px solid rgba(0,0,0,0.8);
+    border-left: 1px solid rgba(0,0,0,0.3);
 }
+
+
 
 .navbar-default .navbar-nav>li>a.btn-primary:hover {
     background-color: #286090;;
@@ -67,6 +73,12 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
   padding-right: 5px;
   padding-top: 3px;
   padding-bottom: 3px;
+  clear: none;
+}
+
+.updates {
+  display: inline-block;
+  clear: none;
 }
 
 
@@ -96,19 +108,34 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
      /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
       .navbar-brand {
-        width: 80%;
+        max-width: 220px;
+        
       }
+      .updates {
+        
+       }
     }
     
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
+      .navbar-brand {
+        width: 80%;
+        max-width: none;
+      }
       
+      .updates {
+        margin-left: 2%;
+      }
     }
     
     
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
       .navbar-brand {
-        width: 90%;
+        width: 95%;
+      }
+      
+      .updates {
+        margin-left: 12%;
       }
     }
