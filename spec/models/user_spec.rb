@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
                 allowing('image/png', 'image/gif').
                 rejecting('text/plain', 'text/xml') }
   it { should validate_attachment_size(:avatar).
-                less_than(1.megabytes) }
+                less_than(2.megabytes) }
 
 end
   

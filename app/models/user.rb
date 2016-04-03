@@ -26,11 +26,11 @@ class User < ActiveRecord::Base
   
   
   #paperclip
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#" }, default_url: "/images/missing_:style.png"
+  has_attached_file :avatar, styles: { large:"600x600#", medium: "250x250#", thumb: "50x50#" }, default_url: "/images/missing_:style.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   #valdiations for paperclip
-  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 1.megabytes
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
   
   
   def full_name
