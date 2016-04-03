@@ -136,7 +136,7 @@ RSpec.describe PostsController, type: :controller do
        it "updates the post" do
          put :update, id: @post.id, post: attr
          @post.reload
-         expect(response).to be_success
+         expect(response).to have_http_status(:redirect)
          expect(@post.title).to eql attr[:title]
          expect(@post.content).to eql attr[:content]
        end
@@ -192,7 +192,7 @@ RSpec.describe PostsController, type: :controller do
     it "updates the other user's post" do
          put :update, id: @post.id, post: attr
          @post.reload
-         expect(response).to be_success
+         expect(response).to have_http_status(:redirect)
          expect(@post.title).to eql attr[:title]
          expect(@post.content).to eql attr[:content]
   

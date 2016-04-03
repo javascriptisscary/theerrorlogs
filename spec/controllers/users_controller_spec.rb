@@ -214,7 +214,8 @@ RSpec.describe UsersController, type: :controller do
      describe "GET #Edit" do
       
         it "will have http status 200" do
-          expect{get :edit, id: @user1.id}.to have_http_status(:success)
+          get :edit, id: @user1.id
+          expect(response).to have_http_status(:success)
         end
       end
      

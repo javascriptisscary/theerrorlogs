@@ -21,8 +21,8 @@ RSpec.describe Post, type: :model do
       expect(@post).to_not be_valid
     end
   
-    it "should have content over 50 characters" do
-      @post = build(:post, content: "hi there!")
+    it "should have content over 1 character" do
+      @post = build(:post, content: "h")
       expect(@post).to_not be_valid
     end
     
