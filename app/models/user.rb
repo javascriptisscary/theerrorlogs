@@ -20,11 +20,15 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   
   
+
+  
   
   #validations
   validates :first_name, :last_name, :email, presence: true
   
   validates :email, uniqueness: true
+  
+  validates :introduction, length: { maximum: 500 } 
   
   #paperclip
   has_attached_file :avatar, styles: { large:"600x600#", medium: "250x250#", thumb: "50x50#" }, default_url: "/images/missing_:style.png"

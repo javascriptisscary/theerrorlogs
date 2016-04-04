@@ -30,7 +30,9 @@
             Followers
           </div>
         </div>
+        <hr class="profile-break">
         <div class="edit-profile-link">
+          <p class="noto-serif"><%= @user.introduction %></p>
           <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-lg btn-primary" %>
         </div>
         </div>
@@ -40,8 +42,21 @@
         <li><%=link_to 'Find Users', users_path, class: "btn btn-default" %></li>
         <li><%=link_to "Following Posts", friends_posts_path, class: "btn btn-default" %></li>
         <li><%=link_to "New Post", new_post_path, class: "btn btn-lg btn-success" %></li>
-        
       </ul>
+      
+      <!-- form for profile introduction -->
+      <% if @user.introduction.blank? %>
+        <%= form_for @user do |form| %>
+          <div class= "form-group">
+            <%= form.text_area :introduction, class: "form-control", maxlength: 500, id: "intro-form", placeholder: "Enter your intro here..." %>
+          </div>
+          <div class="text-center">
+          <%= form.submit 'Submit Intro', class: "btn btn-default", id:"submit-intro", data: { no_turbolink: true } %>
+        </div>
+          <% end %>
+      <% end %>
+      
+      <!-- begin tables for posts and comments -->
       <% unless @posts.empty? %>
         <%= render 'shared/table' %>
       <% else %>

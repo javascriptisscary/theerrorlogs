@@ -47,8 +47,11 @@ $(document).on('page:change', function(){
       var arrow = document.getElementById("arrow");
         
         arrow.style.opacity = "0";
-    }
+    };
     
+  
+ 
+  
   
   
   //call the function when scrolled upon
@@ -56,4 +59,16 @@ $(document).on('page:change', function(){
  
     blog_images_responsive();
   
-})
+  //if user clicks in profile intro text-area, submit button appears
+    document.getElementById("intro-form").addEventListener("mousedown", function() {
+      var submit = document.getElementById("submit-intro");
+      
+      submit.style.display = "initial";
+      this.style.backgroundColor= "white";
+      
+      
+    
+    });
+      
+      
+});

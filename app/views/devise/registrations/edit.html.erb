@@ -18,6 +18,11 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name, class: "form-control log-in" %>
   </div>
+    
+    <div class="field form-group">
+      <%= f.label :introduction %>
+      <%= f.text_area :introduction, class: "form-control log-in" %>
+    </div>
   
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

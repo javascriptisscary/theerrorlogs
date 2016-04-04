@@ -13,8 +13,10 @@
     Followers
   
 </div>
-
-
+<% unless @user.introduction.blank? %>
+    <hr class="profile-break">
+<p><%= @user.introduction %></p>
+<% end %>
 
 <% if user_signed_in? %>
 <div class="follow-button-profile">

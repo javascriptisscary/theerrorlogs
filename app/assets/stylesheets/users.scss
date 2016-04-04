@@ -36,7 +36,7 @@ section {
 
 
 .edit-profile-link {
-    margin-top: 10px;
+    
     text-align:center;
     
 }
@@ -52,6 +52,17 @@ section {
     font-size: 1.25em;
     top: 80%;
    
+}
+
+
+.profile-break {
+    margin-bottom: 20px;
+    margin-top: 0;
+    border: none;
+    height: 1px;
+    color: rgba(51, 51, 51, 0.1);
+    background-color: rgba(51, 51, 51, 0.1);
+    
 }
 
 .log-in {
@@ -83,8 +94,23 @@ margin: 10px auto;
 
 
 
+#intro-form {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#submit-intro {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: none;
+    
+}
+
 .stats {
-    margin-bottom: 30px;
+    margin-bottom:10px;
     text-align: center;
 }
 
@@ -94,6 +120,7 @@ margin: 10px auto;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    
 }
 
 .profile-list li {
@@ -124,6 +151,21 @@ margin: 10px auto;
 .profile-name {
     text-align: center;
 }
+
+
+.noto-serif {
+    font-family: "Noto Serif", "Times New Roman", Times, serif;
+}
+
+/* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+     
+      #intro-form {
+        width: 75%;
+      }
+    
+    
+    }
 
 
 
