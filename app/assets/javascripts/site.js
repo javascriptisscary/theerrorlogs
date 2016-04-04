@@ -9,7 +9,7 @@ $(document).on('page:change', function(){
     
     
     
-    //make images displaying from user-created blog posts have class "img-responsive" 
+  //make images displaying from user-created blog posts have class "img-responsive" 
     
   function blog_images_responsive() {
       
@@ -32,11 +32,7 @@ $(document).on('page:change', function(){
         else {
          continue;
         }
-      
       }
-     
-      
-    
     }
    
   }; //end blog_images_responsive
