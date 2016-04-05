@@ -43,8 +43,8 @@
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, user_path(current_user.id),  data: { no_turbolink: true }, class: "left-border" %></li>
-          <li><%= link_to '<span class="glyphicon glyphicon-pencil"></span>&nbsp; New Post'.html_safe, new_post_path%></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, user_path(current_user),  data: { no_turbolink: true }, class: "left-border" %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-pencil"></span>&nbsp; New Post'.html_safe, new_user_post_path(current_user) %></li>
           <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout'.html_safe, destroy_user_session_path,:method => :delete) %></li>
       </ul>
         <% else %>

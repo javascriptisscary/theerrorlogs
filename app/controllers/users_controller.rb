@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if @user == current_user
-        redirect_to profile_path
+        redirect_to edit_user_path
     end
     @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:posts_page], per_page: 4)
     
@@ -42,16 +42,16 @@ class UsersController < ApplicationController
 
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     if @user.update(user_params)
-      redirect_to profile_path, notice: 'User successfully updated'
+      redirect_to edit_user_path, notice: 'User successfully updated'
     else
-      redirect_to profile_path, alert: 'User not updated. Please try again.'
+      redirect_to edit_user_path, alert: 'User not updated. Please try again.'
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @user.destroy
     redirect_to root_path, alert: "User has been erased. Goodbye!"
     
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   
   def following
     @title = "Following"
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find(params[:id])
     @users = @user.following.paginate(page: params[:page], per_page: 4)
     @following = true
     render '/shared/_show_follow'
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
   def followers
     @title = "Followers"
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find(params[:id])
     @users = @user.followers.paginate(page: params[:page], per_page: 4)
     @following = false
     render '/shared/_show_follow'

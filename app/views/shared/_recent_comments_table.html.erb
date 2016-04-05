@@ -8,7 +8,7 @@
           
             <% @comments.each do |comment| %>
               <tr>
-                <td><%=link_to comment_preview(comment.content), post_path(comment.post_id), title: "Commented on: #{comment.post.title} by #{comment.post.user.full_name}",  data: { toggle: 'tooltip', placement: "left" } %></td>
+                <td><%=link_to comment_preview(comment.content), user_post_path(comment.post.user, comment.post), title: "Commented on: #{comment.post.title} by #{comment.post.user.full_name}",  data: { toggle: 'tooltip', placement: "left" } %></td>
                 <td><%= remove_time(comment)%></td>
               </tr>
           

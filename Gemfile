@@ -33,7 +33,7 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-
+gem 'friendly_id', '~> 5.1.0'
 
 
 gem 'rails_12factor', group: :production

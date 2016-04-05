@@ -16,9 +16,9 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created'
+      redirect_to user_post_path(@post.user, @post), notice: 'Post was successfully created'
     else
-      render new_post_path, alert: 'Post not created. Please try again.'
+      render new_user_post_path, alert: 'Post not created. Please try again.'
     end
     
   end
@@ -28,20 +28,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @user = User.find(@post.user_id)
     @comments =@post.comments
     @comment = Comment.new
   end
   
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post successfully updated'
+      redirect_to user_post(@post.user, @post), notice: 'Post successfully updated'
     else
       render :edit, alert: 'Post was not updated. Please try again.'
         
@@ -50,9 +50,9 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @post.destroy
-    redirect_to profile_path
+    redirect_to edit_user_path(current_user)
   end
 
   private

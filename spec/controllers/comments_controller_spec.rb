@@ -32,7 +32,7 @@ RSpec.describe CommentsController, type: :controller do
         sign_in @user
         @post = create(:post)
         @com_attr = FactoryGirl.attributes_for(:comment, post_id: @post.id, user_id: @user.id)
-        puts @com_attr
+        
         @comment = create(:comment, user_id: @user.id, post_id: @post.id)
         
         @post1 = create(:post, user_id: @user.id)
@@ -48,7 +48,7 @@ RSpec.describe CommentsController, type: :controller do
       
       it "create a comment" do
         expect {
-           post :create, comment: @com_attr
+           post :create,  comment: @com_attr
          }.to change(Comment, :count).by(1)
       end
     

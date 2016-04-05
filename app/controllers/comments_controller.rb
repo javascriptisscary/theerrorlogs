@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     
     
     if @comment.save
-      redirect_to post_path(@comment.post_id), notice: 'Comment was successfully created'
+      redirect_to user_post_path(@comment.post.user, @comment.post), notice: 'Comment was successfully created'
     else
       redirect_to :back, alert: 'Comment not created. Please try again.'
     end
@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @post = @comment.post_id
+    @post = @comment.post
     @comment.destroy
-    redirect_to post_path(@post), alert: 'Comment was successfully deleted'
+    redirect_to user_post_path(@post.user, @post), alert: 'Comment was successfully deleted'
   end
 
 

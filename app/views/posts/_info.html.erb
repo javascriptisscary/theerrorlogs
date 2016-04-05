@@ -1,11 +1,11 @@
 <footer class="container post-info notosans">
-  <%= link_to user_path(post.user_id), data: { no_turbolink: true }, class: "thumb-link" do%>
+  <%= link_to user_path(post.user), data: { no_turbolink: true }, class: "thumb-link" do%>
     <%= image_tag post.user.avatar(:thumb), class: "img-circle thumb" %>
   <%end%>
   <%= link_to post.user.full_name, user_path(post.user), class: "info-pad", data: { no_turbolink: true } %>
   <% if user_signed_in? %>
     <% if post.user_id == current_user.id || current_user.admin? %>
-      <%= link_to 'Edit Post', edit_post_path(post), class: 'info-edit' %>
+      <%= link_to 'Edit Post', edit_user_post_path(post.user, post), class: 'info-edit' %>
     <% end %>
   <% end %>
   <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>

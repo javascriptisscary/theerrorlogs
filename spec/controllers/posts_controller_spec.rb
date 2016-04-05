@@ -49,7 +49,7 @@ RSpec.describe PostsController, type: :controller do
    
     describe "GET #index" do
       it "returns http redirect" do
-        get :index
+        get '/users/posts'
         expect(response).to have_http_status(:redirect)
       end
     end 
