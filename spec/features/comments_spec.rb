@@ -10,7 +10,7 @@ describe "User not signed in" do
   end
   
   it "doesn't show a comment box" do
-    visit post_path(@post.id)
+    visit user_post_path(@user, @post.id)
     expect(page).to have_content "You must sign in to leave a comment"
   end
 
@@ -28,7 +28,7 @@ describe "User makes a new comment" do
   end
 
   it "makes a new comment then deletes it" do
-    visit post_path(@post.id)
+    visit user_post_path(@user, @post.id)
     
     
      within(".comment-form") do

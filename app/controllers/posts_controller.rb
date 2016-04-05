@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.friendly.find(params[:id])
     if @post.update(post_params)
-      redirect_to user_post(@post.user, @post), notice: 'Post successfully updated'
+      redirect_to user_post_path(@post.user, @post), notice: 'Post successfully updated'
     else
       render :edit, alert: 'Post was not updated. Please try again.'
         

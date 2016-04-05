@@ -9,7 +9,7 @@ describe "Pagination on User #Edit Table" do
   end
 
   it "visits User #show Page" do
-     visit user_path(@user.id)
+     visit user_path(@user)
      click_on 'Next'
      within('table') {
        expect(page).to have_content "Random"

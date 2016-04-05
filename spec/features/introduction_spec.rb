@@ -15,7 +15,7 @@ describe "User creates first introduction" do
 
 
   it 'adds an introduction on the profile page' do
-    visit profile_path
+    visit user_path(@user)
   
      within '.form-group' do
       fill_in 'textarea', with: "I'm a random introduction"

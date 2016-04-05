@@ -14,7 +14,7 @@ describe "User sees latest posts from friends" do
   
   
   it "visits profile, clicks on link, and sees friend's post " do
-    visit profile_path
+    visit user_path(@user)
     click_link('Updates')
     expect(page).to have_content "Your Mom"
     expect(page).to_not have_content "You won't see me"
@@ -29,8 +29,8 @@ describe "User sees latest posts from friends" do
     login_as(@user, :scope => :user)
   end
     
-    it "visits profile, clicks on link, and sees friend's post " do
-      visit profile_path
+    it "visits profile, clicks on link, and sees non friend's post " do
+      visit user_path(@user)
       click_link('Updates')
       expect(page).to have_content "Not a friend but you see my post"
       expect(page).to have_content "Currently not following any users. Here's some of our most recents posts"

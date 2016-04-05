@@ -7,12 +7,12 @@ RSpec.describe PostsController, type: :controller do
   context "No User logged in" do
      before do
         @post_maker = create(:user)
-        @post = create(:post, user_id: @post_maker.id)
+        @post = create(:post, user: @post_maker, user_id: @post_maker.id)
       end
  
     describe "POST #create" do
       it "redirects to new user session" do  
-        post :create, post: FactoryGirl.attributes_for(:post)
+        post :create, {user_id:@post_maker ,post: FactoryGirl.attributes_for(:post)}
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -20,14 +20,14 @@ RSpec.describe PostsController, type: :controller do
     describe "DELETE #destroy" do
       it "redirects to new user session" do  
         
-          delete :destroy, id: @post.id
+          delete :destroy, {user_id: @post_maker, id: @post.id}
         expect(response).to redirect_to(new_user_session_path) 
       end
     end
  
     describe "GET #edit" do
       it "redirects to new user session" do    
-        get :edit, id: @post.id
+        get :edit, {user_id: @post_maker.id, id: @post.id}
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -35,21 +35,21 @@ RSpec.describe PostsController, type: :controller do
  
     describe "GET #new" do
       it "redirects to new user session" do
-        get :new, id: 1
+        get :new, {user_id: @post_maker, id: 1}
         expect(response).to redirect_to(new_user_session_path)
       end
     end
     
     describe "PUT #update" do
       it "redirects to new user session" do
-        put :update, id: @post.id
+        put :update, {user_id: @post_maker, id: @post.id}
         expect(response).to redirect_to(new_user_session_path)
       end
     end
    
     describe "GET #index" do
       it "returns http redirect" do
-        get '/users/posts'
+        get :index, user_id: @post_maker.id
         expect(response).to have_http_status(:redirect)
       end
     end 
@@ -59,7 +59,7 @@ RSpec.describe PostsController, type: :controller do
       
       it "returns http success" do
         
-        get :show, id: @post.id
+        get :show, {user_id: @post_maker, id: @post.id}
         expect(response).to have_http_status(:success)
       end
     end
@@ -84,7 +84,7 @@ RSpec.describe PostsController, type: :controller do
      describe "POST #create" do
        it "creates a new post" do  
          expect {
-           post :create, post: @post_attr
+           post :create, {user_id: @user ,post: @post_attr}
          }.to change(Post, :count).by(1)
          
        end
@@ -93,7 +93,7 @@ RSpec.describe PostsController, type: :controller do
      
      describe "GET #edit" do
        it "returns http success" do    
-         get :edit, id: @post.id
+         get :edit, {user_id: @user, id: @post.id}
          expect(response).to have_http_status(:success)
        end
      end
@@ -101,7 +101,7 @@ RSpec.describe PostsController, type: :controller do
  
      describe "GET #new" do
        it "returns http success" do
-         get :new
+         get :new, user_id: @user
          expect(response).to have_http_status(:success)
        end
      end
@@ -111,7 +111,7 @@ RSpec.describe PostsController, type: :controller do
    
      describe "GET #index" do
        it "returns http success" do
-         get :index
+         get :index, user_id: @user
          expect(response).to have_http_status(:success)
        end
      end 
@@ -122,7 +122,7 @@ RSpec.describe PostsController, type: :controller do
         @post = create(:post, user_id: @post_maker.id)
        end
        it "returns http success" do
-         get :show, id: @post.id
+         get :show, {user_id: @user, id: @post.id}
          expect(response).to have_http_status(:success)
        end
       
@@ -134,7 +134,7 @@ RSpec.describe PostsController, type: :controller do
           { :title => 'new title', :content => 'new contentnew contentnew contentnew contentnew contentnew contentnew contentnew contentnew content' }
        end
        it "updates the post" do
-         put :update, id: @post.id, post: attr
+         put :update, user_id: @user, id: @post.id, post: attr
          @post.reload
          expect(response).to have_http_status(:redirect)
          expect(@post.title).to eql attr[:title]
@@ -147,7 +147,7 @@ RSpec.describe PostsController, type: :controller do
      describe "DELETE #destroy" do
        it "deletes the post" do  
           expect {
-          delete :destroy, id: @post.id
+          delete :destroy, {user_id: @user, id: @post.id}
         }.to change(Post, :count).by(-1) 
        end
      end
@@ -163,13 +163,14 @@ RSpec.describe PostsController, type: :controller do
     before do
       @admin = create(:user, admin: true)
       sign_in @admin
-      @post = create(:post)
+      @user = create(:user)
+      @post = create(:post, user: @user)
     end
   
   
   describe " GET #edit" do
     it "gets a diff user's edit" do    
-        get :edit, id: @post.id
+        get :edit, {user_id: @post.user_id, id: @post.id}
         expect(response).to have_http_status(:success)
       end
     end
@@ -177,7 +178,7 @@ RSpec.describe PostsController, type: :controller do
      describe "DELETE #destroy" do
        it "deletes the diff user's post" do  
           expect {
-          delete :destroy, id: @post.id
+          delete :destroy, {user_id: @post.user_id, id: @post.id}
         }.to change(Post, :count).by(-1) 
        end
      end
@@ -186,11 +187,11 @@ RSpec.describe PostsController, type: :controller do
   
   describe "POST #update"
     let(:attr) do 
-          { :title => 'new title', :content => 'i am admin i am admin i am admin i am admin i am admin i am admin i am admin admin admin admin' }
+          { :title => 'new title', :content => 'i am admin i am admin i am admin i am admin i am admin i am admin i am admin admin admin admin'}
        end
     
     it "updates the other user's post" do
-         put :update, id: @post.id, post: attr
+         put :update, {user_id: @user, id: @post.id, post: attr}
          @post.reload
          expect(response).to have_http_status(:redirect)
          expect(@post.title).to eql attr[:title]
@@ -245,7 +246,7 @@ end # end admin
     
     describe "GET Edit" do
       it "will not have authorization" do
-        expect{get :edit, id: (@post.id)}.to raise_error(CanCan::AccessDenied)
+        expect{get :edit, user_id: (@user), id: (@post.id)}.to raise_error(CanCan::AccessDenied)
       end
     end
   

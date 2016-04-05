@@ -16,7 +16,7 @@ RSpec.describe CommentsController, type: :controller do
     
     describe "DELETE #destroy" do
        it "deletes the post" do  
-          delete :destroy, id: @post.id
+          delete :destroy, {user_id: @post.user,  id: @post.id}
           expect(response).to redirect_to(new_user_session_path)  
        end
      end
@@ -30,15 +30,15 @@ RSpec.describe CommentsController, type: :controller do
     before do
         @user = create(:user)
         sign_in @user
-        @post = create(:post)
+        @post = create(:post, user: @user)
         @com_attr = FactoryGirl.attributes_for(:comment, post_id: @post.id, user_id: @user.id)
         
-        @comment = create(:comment, user_id: @user.id, post_id: @post.id)
+        @comment = create(:comment, user: @user, post: @post)
         
         @post1 = create(:post, user_id: @user.id)
         @user1 = create(:user)
         @comment1 = create(:comment, user_id: @user1.id, post_id: @post1.id)
-        @comment2 = create(:comment)
+        @comment2 = create(:comment, user: @user1, post: @post1)
         @admin = create(:user, admin: true)
       end
   
@@ -48,7 +48,7 @@ RSpec.describe CommentsController, type: :controller do
       
       it "create a comment" do
         expect {
-           post :create,  comment: @com_attr
+           post :create,  { comment: @com_attr}
          }.to change(Comment, :count).by(1)
       end
     
@@ -59,7 +59,7 @@ RSpec.describe CommentsController, type: :controller do
         
       it "user deletes own comment" do  
         expect {
-          delete :destroy, id: @comment.id
+          delete :destroy, {user_id: @user, id: @comment.id}
         }.to change(Comment, :count).by(-1) 
        end
      end
@@ -83,7 +83,7 @@ RSpec.describe CommentsController, type: :controller do
   
     it "will let admin destroy different user's post" do
       expect {
-        delete :destroy, id: @comment2.id
+        delete :destroy, {id: @comment2.id}
       }.to change(Comment, :count).by(-1) 
     end
   end

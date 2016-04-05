@@ -13,7 +13,7 @@ describe "User visits profile" do
   end
   
    it "sees recent posts and clicks on link to post" do
-     visit profile_path
+     visit user_path(@user)
      expect(page).to have_content "Your Mom"
      click_link("Your Mom")
      expect(page).to have_content "Leave a Comment"
@@ -22,7 +22,7 @@ describe "User visits profile" do
   
   
   it "sees recent comments and clicks on link to post" do
-    visit profile_path
+    visit user_path(@user)
     expect(page).to have_content "I'm a random comment"
     click_link("I'm a random comment")
     expect(page).to have_content "1 comment"

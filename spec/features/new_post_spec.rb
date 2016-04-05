@@ -11,7 +11,7 @@ describe "User makes new Post" do
   end
 
   it "makes a new post and edits it" do
-    visit profile_path
+    visit user_path(@user)
     within(".navbar") do
       click_link 'New Post'
     end
