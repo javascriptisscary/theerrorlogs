@@ -8,3 +8,16 @@
   </div>
 </div>
 <%=render 'shared/posts', posts: @posts %>
+<script>
+  
+    function arrow_disappear() {
+      var arrow = document.getElementById("arrow");
+        
+        arrow.style.opacity = "0";
+    };
+    
+      //call the function when scrolled upon
+    window.document.addEventListener("scroll", arrow_disappear);
+    
+  
+</script>

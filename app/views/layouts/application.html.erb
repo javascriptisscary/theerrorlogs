@@ -27,11 +27,11 @@
       </button>
       <%if user_signed_in?%>
         <%= link_to root_path, id: 'brand' do %>
-          <%= image_tag "black.png", class:'navbar-brand img-responsive' %>
+          <%= image_tag "black.png", class:'navbar-brand' %>
         <%end%>
       <% else %>
         <%= link_to root_path do %>
-          <%= image_tag "black.png", class:'navbar-brand img-responsive' %>
+          <%= image_tag "black.png", class:'navbar-brand' %>
         <%end%>
       <%end%>
     </div>

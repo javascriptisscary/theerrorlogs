@@ -39,19 +39,14 @@ $(document).on('page:change', function(){
   
   
  
-    function arrow_disappear() {
-      var arrow = document.getElementById("arrow");
-        
-        arrow.style.opacity = "0";
-    };
+    
     
   
  
   
   
   
-  //call the function when scrolled upon
-    window.document.addEventListener("scroll", arrow_disappear);
+
  
     blog_images_responsive();
   
