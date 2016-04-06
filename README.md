@@ -10,7 +10,7 @@ Postgres DB
 
 ##Current Features:
 
-* Blogging with WYSMIHTML5 editor
+* full-featured blogging with WYSMIHTML5 editor
 
 * Followers/Following
 
@@ -22,7 +22,7 @@ Postgres DB
 
 * Friendly Ids with friend_id
 
-* Image upload with Paperclip
+* Image upload with Paperclip to AWS
 
 * Profile page with list of Recent Posts and Comments
 
@@ -59,7 +59,7 @@ For larger posts that are listed on a page, add a read more button.
 #### Next and Previous Post buttons
 On the Post Show Page
 
-####Image upload to AWS for blog posts
+####Image uploads to AWS for blog posts
 Currently only for profile pics.
 
 
@@ -81,6 +81,7 @@ Currently only shown at the bottom of the post
 Currently Admin or comment owner can erase, but not the owner of the post. 
 
 
+
 ##Design
 
 ####Condensed logo for Navbar
@@ -93,18 +94,23 @@ We need a better solution for the "updates" button on the navbar
 
 ## BUGS
 
-Currently we have 2 tests I don't know how to write.
+####Currently we have 2 tests I don't know how to write.
 ./spec/features/introduction_spec.rb:1
 ./spec/features/post_images_responsive_spec.rb:15
 
-And a 3rd of a feature we have yet to implement
+####And a 3rd of a feature we have yet to implement
 ./spec/controllers/comments_controller_spec.rb:70
 
-JS typeerror
+####JS typeerror
 
-When writing a new post or editing it.. it just doesn't quite feel right. Probably some extra JS running somewhere.
+####When writing a new post or editing it..
+It just doesn't quite feel right. Probably some extra JS running somewhere.
 
-And many more I haven't caught.
+####Friend_id
+When signing in (perhaps signing up as well), it doesn't use friendly ids
+
+####See a bug?
+Write it up and try and fix it yourself!
 
 
 
@@ -123,7 +129,7 @@ Theerrorlogs is hosted at GitHub and uses Git for source control. In order to ob
 
 If you simply want to create a local copy of the source to play with, you can clone the main repository using this command:
 
-git clone git://github.com/javascriptisscary/TDD_Blog.git (this name will change soon)
+git clone git://github.com/javascriptisscary/theerrorlogs.git
 
 If you're planning on contributing to Theerrorlogs, then it's a good idea to fork the repository. You can find instructions for forking a repository at https://help.github.com/articles/fork-a-repo. After forking Theerrorlogs repository, you'll want to create a local copy of your fork.
 
