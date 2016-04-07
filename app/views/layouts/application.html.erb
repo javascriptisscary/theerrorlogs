@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>  
+<body <%= yield(:body_attributes) %>>  
   <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
      <% elsif flash[:alert]%>

@@ -4,7 +4,7 @@
 
 A blog/social platform for aspiring developers.
 
-Ruby Version 2.2.2
+Ruby Version 2.2.3
 Rails Version 4.2.3
 Postgres DB
 
@@ -20,7 +20,7 @@ Postgres DB
 
 * User signup/login with Devise
 
-* Friendly Ids with friend_id
+* Friendly Post URL's with friend_id
 
 * Image upload with Paperclip to AWS
 
@@ -35,8 +35,6 @@ Postgres DB
 * Minimal design focused on readablity
 
 * Responsive
-
-
 
 
 ## New Features to be Implemented
@@ -72,7 +70,7 @@ Report it and then go try and fix it yourself! ;)
 There are multiple forms and places that need to be converted into Ajax for better performance.
 
 ####Links inside of blog posts should be blue
-Currently they are black, same as the rest of the site
+Currently they are black, same as the rest of the site - Completed
 
 ####Add name to top of post under title
 Currently only shown at the bottom of the post
@@ -81,15 +79,10 @@ Currently only shown at the bottom of the post
 Currently Admin or comment owner can erase, but not the owner of the post. 
 
 
-
 ##Design
-
-####Condensed logo for Navbar
-After login
 
 ####Better NavBar
 We need a better solution for the "updates" button on the navbar
-
 
 
 ## BUGS
@@ -113,14 +106,10 @@ When signing in (perhaps signing up as well), it doesn't use friendly ids
 Write it up and try and fix it yourself!
 
 
-
-
 #DEVELOPERS GUIDE
 
 A caveat before we get started. This repository is made for helping CareerFoundry students/graduates (and myself) to learn GitHub and open source type projects.
 Although we love everybody, we're hoping to keep it mostly to CareerFoundry people. If you really want to help anyway, send an email to kennethgould@javascriptisscary.com thanks!
-
-
 
 
 ##GET THE SOURCE CODE

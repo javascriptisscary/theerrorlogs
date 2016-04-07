@@ -2,7 +2,6 @@
   <article class="container post">
     <h1><strong><%= post.title %></strong></h1>
     <p><%= truncate(post.content, length: 240, omission: "..." , escape: false) %></p>
-    <p><%= link_to "Read More", user_post_path(post.user, post) %></p>
    </article>   
    <%= render 'posts/info', post: post %>
 <% end %>
