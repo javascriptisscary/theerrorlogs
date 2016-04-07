@@ -1,6 +1,6 @@
 <%posts.each do |post| %>
   <article class="container post">
-    <h1><strong><%= post.title %></strong></h1>
+    <h1 class="header-link"><strong><%= link_to post.title, user_post_path(post.user, post) %></strong></h1>
     <p><%= truncate(post.content, length: 240, omission: "..." , escape: false) %></p>
     <p><%= link_to "Read More", user_post_path(post.user, post) %></p>
    </article>   

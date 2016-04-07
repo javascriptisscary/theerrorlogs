@@ -66,14 +66,6 @@ RSpec.describe CommentsController, type: :controller do
   
   
   
-      #working on this one
-      it " will let owner of blog post, delete comment from a diff user" do
-        expect {
-          delete :destroy, id: @comment1.id
-        }.to change(Comment, :count).by(-1) 
-  
-      end
-  
   
   context " user is admin" do
     before do
