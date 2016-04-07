@@ -12,9 +12,8 @@
 !/log/.keep
 /tmp
 
-/config/database.yml
-/config/secrets.yml
-
+secrets.yml
+database.yml
 
 #ignore images from users on localhost
 **/system/
