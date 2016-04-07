@@ -1,69 +1,48 @@
-
-
 .navbar-default .navbar-nav > li > a {
-
-    color: #333333;
-    text-shadow: 1px 1px rgba(0,0,0,0.1);
-    font-family: "Noto Sans";
-    
+  color: #333333;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
   
-  /* Transparent borders so transition will function correctly */
-    border-bottom: 1px solid rgba(0,0,0,0);
-    border-top: 1px solid rgba(0,0,0,0);
-    font-weight: 500;
-    transition: all .8s;
+/* Transparent borders so transition will function correctly */
+  border-bottom: 1px solid rgba(0,0,0,0);
+  border-top: 1px solid rgba(0,0,0,0);
+  font-weight: 500;
+  transition: all .8s;
   -webkit-transition: all .8s;
   -moz-transition: all .8s;
   -o-transition: all .8s;
-  
-  
 }
 
-
-.navbar-default .navbar-nav > li > a:hover{
-  
+.navbar-default .navbar-nav > li > a:hover{  
   border-top-color: rgba(0,0,0,0.3);
   border-bottom-color: rgba(0,0,0,0.3);
   color: #337ab7
 }
 
-
-
-
-
 .navbar-default .navbar-nav>li>a.btn-primary:hover {
-    background-color: #286090;;
-    border-color: #204d74;;
-   
+  background-color: #286090;;
+  border-color: #204d74;;   
 }
 
-
 .navbar-default .navbar-nav>li>a.btn-success:hover {
-    background-color: #398439;
-    border-color: #255625;
-    
+  background-color: #398439;
+  border-color: #255625;
 }
 
 .navbar-default .navbar-nav>li>a.btn-warning:hover {
-    background-color: #ec971f;
-    border-color: #d58512;
-    
-    
+  background-color: #ec971f;
+  border-color: #d58512;
 }
 
 .navbar-default .navbar-nav>li>a.btn:hover {
-    
-    color:white;
-    transition: .7s;
+  color:white;
+  transition: .7s;
 }
 
 .navbar {
-    border-bottom: 1px solid rgba(0,0,0,0.4);
--webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
--moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-
-
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 .navbar-brand {
@@ -72,7 +51,6 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
   padding-top: 7px;
   padding-bottom: 7px;
   clear: none;
- 
 }
 
 .updates {
@@ -80,22 +58,20 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
   clear: none;
 }
 
-
 .navbar-default {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 #navbar-contain {
-    background-color: #ffffff;
-    border:none;
+  background-color: #ffffff;
+  border:none;
 }
 
 @media (max-width: 320px) {
-    .navbar-brand {
-        width: 70%;
-    }
+  .navbar-brand {
+    width: 70%;
+  }
 }
-
 
  /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 360px) {
@@ -104,49 +80,44 @@ box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
       }
     }
     
-     /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-      .navbar-brand {
-        width: 220px;
-        
-      }
-      .updates {
-        margin-left: 5%;
-       }
+ /* Small Devices, Tablets */
+  @media only screen and (min-width : 768px) {
+  .navbar-brand {
+    width: 220px;  
+  }
+  
+  .updates {
+    margin-left: 5%;
+  }
+
+  /* add borders to nav */
+   .navbar-default .navbar-nav > li > a {
+     border-right: 1px solid rgba(0,0,0,0.3);
+  }
        
-       /* add borders to nav */
-       .navbar-default .navbar-nav > li > a {
-       border-right: 1px solid rgba(0,0,0,0.3);
-       }
-       
-       .left-border {
+  .left-border {
     border-left: 1px solid rgba(0,0,0,0.3);
+  }
 }
-       
-    }
-    
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-      .navbar-brand {
-        width: 300px;
-        
-      }
-      
-      .updates {
-        margin-left: 8%;
-      }
-    }
-    
-    
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
-      .navbar-brand {
-        width: 355px;
-        
-        
-      }
-      
-      .updates {
-        margin-left: 15%;
-      }
-    }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .navbar-brand {
+    width: 300px;
+  }
+  
+  .updates {
+    margin-left: 8%;
+  }
+}
+  
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .navbar-brand {
+    width: 355px;  
+  }
+  
+  .updates {
+    margin-left: 15%;
+  }
+}

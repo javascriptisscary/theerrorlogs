@@ -1,71 +1,35 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *
- *
- *
- * */
-
-
 $font-size-base: 16px !default;
 $line-height-base: 1.7 !default;
 $link-hover-decoration: none;
-$font-family-sans-serif: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif: "Noto Serif", "Times New Roman", Times, serif;
-$font-family-base: $font-family-serif;
-
-
  
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
- @import "navbar.scss";
- @import "pagination.scss";
- @import "welcome.scss";
- @import "comments.scss";
- @import "posts.scss";
- @import "users.scss";
- 
-
-
- 
-
 
 body {
   padding-top: 50px;
-  background-color: #f1f1f1;
-  
+  font-weight: 400;
+  background: #ebebeb;
+  font-family: "brandon-grotesque", sans-serif;;
 }
 
-
-
 .notice {
-    background-color: green;
-    color: white;
-    text-align: center;
-    padding: 5px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 5px;
 }
 
 .alert {
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 5px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 5px;
 }
 
-.btn {
-  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-
-
+@import "navbar.scss";
+@import "pagination.scss";
+@import "welcome.scss";
+@import "comments.scss";
+@import "posts.scss";
+@import "users.scss";

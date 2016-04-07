@@ -1,4 +1,3 @@
-
 <% if can? :read, post %>
    <h1><strong><%= link_to post.title, user_post_path(post.user, post) %></strong></h1>
    <%= post.content.html_safe %>
