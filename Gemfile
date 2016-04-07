@@ -29,6 +29,7 @@ group :production do
 end
 
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'web-console', group: :development
 
 group :development, :test do
   gem 'capybara'
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'byebug'
   gem 'hirb'
-  gem 'web-console', '~> 2.0' 
   gem 'spring'
 end
 
