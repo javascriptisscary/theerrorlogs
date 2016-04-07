@@ -1,19 +1,19 @@
-
+# Used for development
 development:
   adapter: postgresql
   encoding: unicode
-  database: tddblog
+  database: theerrorlogs_development
   pool: 5
-  username: postgres
-  password: toaster
+  username: benclarke
+  password:
   host: :localhost
 
-
+# Used for testing
 test:
   adapter: postgresql
   encoding: unicode
-  database: tddblog_test
+  database: theerrorlogs_test
   pool: 5
-  username: postgres
-  password: toaster
+  username: benclarke
+  password:
   host: :localhost
