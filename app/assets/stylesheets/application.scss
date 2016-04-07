@@ -27,6 +27,11 @@ body {
   padding: 5px;
 }
 
+img {
+  width: 100%;
+  margin: 0 auto;
+}
+
 @import "navbar.scss";
 @import "pagination.scss";
 @import "welcome.scss";

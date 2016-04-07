@@ -1,68 +1,57 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 #profile {
-    margin-bottom:5%;
-    border: 1px solid rgba(0,0,0,0.5);
-    
+  width: 71%;
+  margin-bottom:5%;
+  border: 1px solid rgba(0,0,0,0.5);  
 }
 
 .profile {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #submit-edit {
-    margin-top:2%;
+  margin-top:2%;
 }
 
-.container h1 {
-    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-bottom: 20px;
+.container h1  {
+  padding-bottom: 20px;
 }
 
 section {
-    margin-top:20px;
-    padding-bottom: 40px;
-    padding-top: 20px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  margin-top:20px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .table{
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-
-
 .edit-profile-link {
-    
-    text-align:center;
-    
+  margin-bottom: 20%;
+  text-align:center;
 }
 
 #profile-edit-photo {
-    margin: 0 auto;    
+  margin: 0 auto;
 }
 
 .glyphicon-camera {
-    position: absolute;
-    color: rgba(255,255,255,.4);
-    left: 63%;
-    font-size: 1.25em;
-    top: 80%;
-   
+  position: absolute;
+  color: rgba(255,255,255,.4);
+  left: 56%;
+  top: 59%;
+  font-size: 1.25em;
 }
 
-
 .profile-break {
-    margin-bottom: 20px;
-    margin-top: 0;
-    border: none;
-    height: 1px;
-    color: rgba(51, 51, 51, 0.1);
-    background-color: rgba(51, 51, 51, 0.1);
-    
+  margin-bottom: 20px;
+  margin-top: 0;
+  border: none;
+  height: 1px;
+  color: rgba(51, 51, 51, 0.1);
+  background-color: rgba(51, 51, 51, 0.1);
 }
 
 .log-in {
@@ -71,155 +60,127 @@ section {
 }
 
 .users-follow {
-    list-style-type: none;
-    margin: 1% auto;
+  list-style-type: none;
+  margin: 1% auto;
 }
 
 .users-follow li{
-    margin-top:10px;
+  margin-top:10px;
 }
 
 .user-index {
-    margin-top:20px;
+  margin-top:20px;
 }
 
 .user-index-link {
-    padding-top:20px;
+  padding-top:20px;
 }
 
 .search-form {
-margin: 10px auto;
-    
+  margin: 10px auto;    
 }
 
-
-
 #intro-form {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(0, 0, 0, 0.1);
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #submit-intro {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: none;
-    
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: none;
 }
 
 .stats {
-    margin-bottom:10px;
-    text-align: center;
+  margin-bottom:10px;
+  text-align: center;
 }
 
 .profile-list {
-    list-style-type:none;
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    
+  list-style-type:none;
+  margin-top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;    
 }
 
 .profile-list li {
-    display: inline-block;
-    margin-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 #user_avatar {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .recent-comments {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .recent-posts {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .follow-button-profile {
-    text-align: center;
+  text-align: center;
 }
 
 .profile-name {
-    text-align: center;
-}
-
-
-.noto-serif {
-    font-family: "Noto Serif", "Times New Roman", Times, serif;
+  text-align: center;
 }
 
 /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-     
-      #intro-form {
-        width: 75%;
-      }
-    
-    
-    }
-
-
-
+@media only screen and (min-width : 768px) {     
+  #intro-form {
+    width: 75%;
+  }    
+}
 
  /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-      
-      .log-in {
-         width: 40%;
-      }
-      .recent-comments {
-         width: 75%;
-      }
-      .recent-posts {
-         width: 75%;
-      }
-      
-      .digg_pagination {
-        margin-left: 67.3%;
-      }
+@media only screen and (min-width : 992px) {
+  .log-in {
+    width: 40%;
+  }
+  .recent-comments {
+     width: 75%;
+  }
+  .recent-posts {
+     width: 75%;
+  }  
+  .digg_pagination {
+    margin-left: 67.3%;
+  }  
+  section {
+    margin-top:80px;
+  }    
+  .profile-name {
+    text-align: left;
+   }
+   
+  .follow-button-profile {
+    text-align: left;
+   }  
+  .stats {
+    text-align: left;
+  }  
+  .edit-profile-link {
+    text-align:left;
+  }
+  .glyphicon-camera {
+    left: 56%;
+    top: 59%;
+    }  
+  }
     
-      section {
-        margin-top:80px;
-      }
-    
-    
-      .profile-name {
-        text-align: left;
-       }
-       
-      .follow-button-profile {
-        text-align: left;
-       }
-    
-      .stats {
-        text-align: left;
-       }
-    
-      .edit-profile-link {
-        text-align:left;;
-    
-    }
-    
-    .glyphicon-camera {
-            left: 59%;
-         }
-    
-    }
-
-
   @media only screen and (min-width : 1200px) {
-
-
-      .digg_pagination {
-        margin-left: 70.9%;
-      }
+    .digg_pagination {
+      margin-left: 70.9%;
+    }
   }

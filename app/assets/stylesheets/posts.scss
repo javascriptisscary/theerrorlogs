@@ -23,6 +23,9 @@
   -webkit-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
   -moz-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
   box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  span {
+    width: 4%;
+  }
 }
 
 .info-pad {
@@ -45,6 +48,10 @@
 
 .thumb-link:hover{
     text-decoration: none;   
+}
+
+img.img-circle.thumb {
+  width: 5%;
 }
 
 .thumb {
