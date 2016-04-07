@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container" id="navbar-contain">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%if user_signed_in?%>
+        <%= link_to root_path, id: 'brand' do %>
+          <%= image_tag "black.png", class:'navbar-brand' %>
+        <%end%>
+      <% else %>
+        <%= link_to root_path do %>
+          <%= image_tag "black.png", class:'navbar-brand' %>
+        <%end%>
+      <%end%>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <% if user_signed_in? %>
+        <ul class ="nav navbar-nav navbar-left left-border updates">
+          <li><%= link_to "<span class='glyphicon glyphicon-bell'></span>&nbsp; Updates".html_safe, friends_posts_path%></li>
+        </ul>
+      <% end %>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, user_path(current_user),  data: { no_turbolink: true }, class: "left-border" %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-pencil"></span>&nbsp; New Post'.html_safe, new_user_post_path(current_user) %></li>
+          <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout'.html_safe, destroy_user_session_path,:method => :delete) %></li>
+      </ul>
+        <% else %>
+          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span>&nbsp; Login'.html_safe, new_user_session_path, class: "left-border", data: { no_turbolink: true } %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon glyphicon-ok-sign"></span>&nbsp; Signup'.html_safe, new_user_registration_path %></li>
+      </ul>
+       <% end %>
+    </div>
+  </div> <!--container-->
+</nav>

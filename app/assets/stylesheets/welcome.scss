@@ -1,100 +1,70 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .logo {
-    margin: 0 auto;
-    padding-top: 30%;
+  margin: 0 auto;
+  padding-top: 30%;
 }
 
-.fluid-container {
-  
+.fluid-container {  
   min-height: 100vh;
 }
 
-.fluid-container h3 {
-   
+#hero h3 {    
+  font-size: 1.2em;
 }
-
-#hero h3 {
-    
-    font-size: 1.2em;
-                                
-                                
-   
-}
-
 
 #community {
-    font-size:4em;
-    font-weight: 700;
-    font-family: "Noto Sans";
-    transition: 3s ease;
-    text-shadow: 1px 1px rgba(0,0,0,0.5);
+  font-size:4em;
+  font-weight: 700;
+  font-family: "Noto Sans";
+  transition: 3s ease;
+  text-shadow: 1px 1px rgba(0,0,0,0.5);
 }
 
 #words {
-    text-decoration: none;
-    -moz-transition: text-decoration 5s ease;
-    -webkit-transition: text-decoration 5s ease;
-    transition: text-decoration 5s ease;
-    font-weight: 900;
-    
+  text-decoration: none;
+  -moz-transition: text-decoration 5s ease;
+  -webkit-transition: text-decoration 5s ease;
+  transition: text-decoration 5s ease;
+  font-weight: 700;  
 }
 
 #blog {
-    font-family: "Noto Sans";
-    font-weight: 700;
+  font-weight: 400;
 }
 
-
-
-
 .glyphicon-triangle-bottom {
-    font-size: 2em;
-    color: rgba(0,0,0,0.5);
-    
+  font-size: 2em;
+  color: rgba(0,0,0,0.5);  
 }
 
 #arrow {
-    position: absolute;
-    top: 86%;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    transition: opacity 3s ease-in-out;
+  position: absolute;
+  top: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transition: opacity 3s ease-in-out;
 }
 
-
-
-
- @media only screen and (min-width : 360px) {
-    .logo {
-        padding-top: 40%;
-    }
+@media only screen and (min-width : 360px) {
+  .logo {
+    padding-top: 40%;
+  }
  }
  
  /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-
-      #hero h3 {
-    
-        font-size: 1.2em;
-      }
-    
-    
-    }
- 
+@media only screen and (min-width : 768px) {
+  #hero h3 {
+    font-size: 1.2em;
+  }
+} 
 
 /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-      .logo {
-        padding-top: 12%;
-      }
-      
-      #hero h3 {
-    
-        font-size: 1.5em;
-      
-      }
-    }
+@media only screen and (min-width : 992px) {
+  .logo {
+    padding-top: 12%;
+  }
+  #hero h3 {
+    font-size: 1.5em;  
+  }
+}

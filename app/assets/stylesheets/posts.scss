@@ -1,46 +1,34 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .container {
   background-color: #fff;
-  
- 
 }
-
-
-
-.post h1{
-  font-size: 1.75em;
-  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 
 .post {
+  font-weight: 400;
   padding-bottom: 2%;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  h1 {
+    font-size: 1.75em
+  }
 }
-
-article a{
-  color: black;
-}
-
-
 
 .post-info{
-    color:rgba(51,51,51,0.7);
-    background-color: #f7f7f7;
-    padding: 1% 1%;
-    margin-top: 0;
-    margin-bottom: 50px;
-    font-size:1em;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  color:rgba(51,51,51,0.7);
+  background-color: #f7f7f7;
+  padding: 1% 1%;
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-size: 1em;
+  -webkit-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 0px 10px 1px rgba(0,0,0,0.15);
 }
 
 .info-pad {
-    padding-left:1%;
-    padding-right: 1%;
-    color: #333;
+  padding-left:1%;
+  padding-right: 1%;
+  color: #333;
 }
 
 .info-pad:hover {
@@ -48,14 +36,8 @@ article a{
   color: #333;
 }
 
-.info-edit {
-  font-style: italic;
-}
-
-
 .thumb-link:hover{
-    text-decoration:none;
-   
+    text-decoration: none;   
 }
 
 .thumb {
@@ -64,14 +46,9 @@ article a{
 }
 
 .thumb:hover {
-    -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
-
-}
-
-.notosans {
-  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
 .code {
@@ -99,47 +76,35 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 .wysiwyg-color-aqua {color: aqua;}
 .wysiwyg-color-orange {color: orange;}
 
-
-
 /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-      
-      /* size of the new-post content box */
-      #post_content {
-        height: 500px;
-      }
-      
-      .post {
-        padding-left: 5%;
-        padding-right: 5%;
-        margin-top: 40px;
-      }
-      
-      .post-info {
-        font-size: 1.25em;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
+@media only screen and (min-width : 768px) {
+  #post_content {
+    height: 500px;
+  }   
+  .post {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 40px;
+}
+  .post-info {
+    font-size: 1.25em;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 
-    }
-
-   /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-      .post {
-        padding-left: 5%;
-        padding-right: 5%;
-        font-size: 1.15em;
-        margin-top: 80px;
-      }
-      
-      .post-info {
-        font-size:1.5em;
-      }
-      
-      .post h1{
-        font-size: 2em;
-        
-      }
-      
-      
-    }
+/* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    .post {
+      padding-left: 5%;
+      padding-right: 5%;
+      font-size: 1.15em;
+      margin-top: 80px;
+    }    
+  .post-info {
+    font-size: 1em;
+  }  
+  .post h1{
+    font-size: 2em;
+  }
+}
