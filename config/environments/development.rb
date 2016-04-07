@@ -44,6 +44,4 @@ Rails.application.configure do
   
   #paperclip dev
   Paperclip.options[:command_path] = "/home/kenny/rubystack-2.2.2-3/common/bin/convert"
-  
-  
 end
