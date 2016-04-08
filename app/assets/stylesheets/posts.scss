@@ -50,13 +50,10 @@
     text-decoration: none;   
 }
 
-img.img-circle.thumb {
-  width: 5%;
-}
 
 .thumb {
     transition: .5s;
-    border: 2px solid black;
+    border: 1px solid #333;
 }
 
 .thumb:hover {
@@ -65,10 +62,12 @@ img.img-circle.thumb {
   box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
-.code {
-  font-family: monospace;
-  background-color: black;
-  color: white;
+.date {
+  padding-left:2%;
+}
+
+.glyphicon-calendar {
+  padding-left: 2%;
 }
 
 /* Colors for displayed posts */
@@ -120,5 +119,9 @@ img.img-circle.thumb {
   }  
   .post h1{
     font-size: 2em;
+  }
+  
+  .date {
+    padding-left: 0;
   }
 }

@@ -1,5 +1,4 @@
 #profile {
-  width: 71%;
   margin-bottom:5%;
   border: 1px solid rgba(0,0,0,0.5);  
 }
@@ -40,9 +39,9 @@ section {
 .glyphicon-camera {
   position: absolute;
   color: rgba(255,255,255,.4);
-  left: 56%;
-  top: 59%;
+  left: 63%;
   font-size: 1.25em;
+  top: 80%;
 }
 
 .profile-break {
@@ -174,10 +173,9 @@ section {
     text-align:left;
   }
   .glyphicon-camera {
-    left: 56%;
-    top: 59%;
-    }  
+            left: 59%;
   }
+}
     
   @media only screen and (min-width : 1200px) {
     .digg_pagination {

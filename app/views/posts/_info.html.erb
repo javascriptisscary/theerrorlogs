@@ -8,6 +8,6 @@
       <%= link_to 'Edit Post', edit_user_post_path(post.user, post), class: 'info-edit' %>
     <% end %>
   <% end %>
-  <span class="glyphicon glyphicon-calendar" style=padding-left:2%></span>
-  <%= no_time(post.created_at) %>
+  <span class="glyphicon glyphicon-calendar"></span>
+  <span class="date"><%= no_time(post.created_at) %></span>
 </footer>
