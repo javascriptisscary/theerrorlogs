@@ -1,7 +1,7 @@
 $font-size-base: 16px !default;
 $line-height-base: 1.7 !default;
 $link-hover-decoration: none;
- 
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   background: #ebebeb;
   font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 
 .notice {
