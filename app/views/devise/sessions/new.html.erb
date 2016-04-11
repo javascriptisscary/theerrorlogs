@@ -24,6 +24,9 @@
     <%= f.submit "Log in", class: "btn btn-primary", data: { no_turbolink: true } %>
   </div>
 <% end %>
+<br>
+ <div class="container text-center">
+   <%= link_to 'Signup', new_user_registration_path %> | <%= link_to 'Forgot password?', new_user_password_path %>
+ </div>
 
-<%= render "devise/shared/links" %>
 </section>
