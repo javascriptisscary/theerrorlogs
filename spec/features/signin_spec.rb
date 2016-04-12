@@ -6,11 +6,11 @@ describe "Signing in" do
   before do
     create(:user, email: 'user@example.com', password: 'password', first_name: "John", last_name: "Smith")
   end
-  
+
   describe "Entering wrong password" do
-  
+
     it "redirects to :back with notice" do
-      visit '/users/sign_in'
+      visit user_session_path
       within("#session") do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'wrongpassword'
@@ -24,10 +24,10 @@ describe "Signing in" do
 
 
 
- 
+
   describe "Sucessful sign in" do
     it "goes to edit page" do
-      visit '/users/sign_in'
+      visit user_session_path
       within("#session") do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'password'
