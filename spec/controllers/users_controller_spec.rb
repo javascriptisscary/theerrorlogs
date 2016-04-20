@@ -3,45 +3,45 @@ require "cancan/matchers"
 
 RSpec.describe UsersController, type: :controller do
 
-  
+
   context "No user is logged in" do
-    
-    
-    
+
+
+
     describe "GET #show" do
       before do
         @user1 = create(:user)
       end
-      
+
       it "returns http success" do
-        
+
         get :show, id: @user1.id
         expect(response).to have_http_status(:success)
-         
+
        end
     end
 
 
     describe "POST #create" do
-      
+
       it "Creates User" do
          expect {
            post :create, user: {:email=>"blablajhgjyt@example.com", :password=>"123456789", :first_name=>"John", :last_name=>"Smith", :introduction => "Hi I'm John Smith!"}
-         }.to change(User, :count).by(1) 
-      
+         }.to change(User, :count).by(1)
+
       end
-       
-      
+
+
        it "redirects when failing to create user" do
-        
+
          post :create, user: {:email=>"exampleuser2@example.com"}
          expect(response).to redirect_to(root_path)
-        
-      
-      
+
+
+
        end
     end
-    
+
     context "Authorizations" do
 
       before do
@@ -49,31 +49,31 @@ RSpec.describe UsersController, type: :controller do
       end
 
       describe "PUT #update" do
-       
+
         it "will not have authorization" do
           should_not be_able_to(:update, @user1)
         end
       end
 
       describe "GET Edit" do
-      
+
         it "will redirect to sign in" do
           get :edit, id:  @user1.id
           expect(response).to redirect_to(new_user_session_path)
         end
       end
-    
+
       describe "DELETE #Destroy" do
         it "will not have authorization" do
           should_not be_able_to(:delete, @user1)
         end
       end
-  
+
     end #authorizations
 
   end # end no user logged in
 
-  
+
 
 
 
@@ -95,7 +95,7 @@ RSpec.describe UsersController, type: :controller do
 
     describe 'GET own #show page' do
       it 'redirects to #edit'do
-        get :show, id: @user.id
+        get :show, id: @user
         expect(response).to redirect_to edit_user_path
       end
     end
@@ -107,10 +107,10 @@ RSpec.describe UsersController, type: :controller do
       it 'displays user profile' do
         get :show, id: @user1.id
         expect(response).to have_http_status(:success)
-        
+
       end
     end
-  
+
     describe "GET #new" do
       it "returns http success" do
         get :new
@@ -124,9 +124,9 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
-    
-  
-    
+
+
+
 
     describe "GET #edit_photo" do
       it "returns http success" do
@@ -134,14 +134,14 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
-    
+
     describe "GET #followers" do
       it "returns http success" do
         get :followers, id: @user.id
         expect(response).to have_http_status(:success)
       end
     end
-    
+
     describe "GET #following" do
       it "returns http success" do
         get :following, id: @user.id
@@ -160,88 +160,78 @@ RSpec.describe UsersController, type: :controller do
     end
 
     describe "DELETE #destroy" do
-      it "deletes the user" do  
+      it "deletes the user" do
         expect {
           delete :destroy, id: @user.id
-        }.to change(User, :count).by(-1) 
+        }.to change(User, :count).by(-1)
        end
      end
-  
+
     context "User tries to access other User" do
       before do
         @user1 = create(:user)
       end
 
       describe "PUT #update" do
-       
+
         it "will not have authorization" do
           should_not be_able_to(:update, @user1)
         end
       end
 
       describe "GET #Edit" do
-      
+
         it "will redirect to sign in" do
           expect{get :edit, id: @user1.id}.to raise_error(CanCan::AccessDenied)
         end
       end
-    
+
       describe "DELETE #Destroy" do
         it "will not have authorization" do
           should_not be_able_to(:delete, @user1)
         end
       end
-  
+
     end #User tries to access other User
 
   end # end user logged in
-  
-  
+
+
    context "User is admin" do
      before do
        @admin = create(:user, admin: true)
        sign_in @admin
        @user1 = create(:user)
      end
-     
+
      describe "PUT #update" do
-       
+
         it "will have authorization" do
           should be_able_to(:update, @user1)
         end
       end
-     
+
      describe "GET #Edit" do
-      
+
         it "will have http status 200" do
           get :edit, id: @user1.id
           expect(response).to have_http_status(:success)
         end
       end
-     
-     
+
+
      describe "DELETE #destroy" do
-        it "deletes the diff user" do  
+        it "deletes the diff user" do
         expect {
           delete :destroy, id: @user1.id
-        }.to change(User, :count).by(-1) 
+        }.to change(User, :count).by(-1)
        end
      end
-     
-   
-   
+
+
+
    end
- 
- 
- 
- end 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+ end

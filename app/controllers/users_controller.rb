@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :index, :show, :create, :sign_in]
   load_and_authorize_resource except: [:following, :followers ]
-  
+
   def index
     if params[:q]
       search_term = params[:q]
@@ -14,10 +14,10 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     if @user == current_user
-        redirect_to edit_user_path
+        redirect_to edit_user_path(current_user.to_param)
     end
     @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:posts_page], per_page: 4)
-    
+
   end
 
   def new
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+
     @user = current_user
     @posts = @user.posts.all.order("created_at DESC").paginate(page: params[:posts_page], per_page: 4)
     @comments = @user.comments.all.order("created_at DESC").paginate(page: params[:comments_page], per_page: 4)
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
 
   def create
     @user= User.new(user_params)
-    
+
     if @user.save
       redirect_to @user, notice: 'User was successfully created'
     else
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   def update
     @user = User.friendly.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path, notice: 'User successfully updated'
+      redirect_to @user, notice: 'User successfully updated'
     else
       redirect_to edit_user_path, alert: 'User not updated. Please try again.'
     end
@@ -54,13 +55,13 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @user.destroy
     redirect_to root_path, alert: "User has been erased. Goodbye!"
-    
+
   end
-  
+
   def edit_photo
     @user = current_user
   end
-  
+
   def following
     @title = "Following"
     @user  = User.friendly.find(params[:id])
@@ -76,14 +77,14 @@ class UsersController < ApplicationController
     @following = false
     render '/shared/_show_follow'
   end
-  
-  
-  
-  
+
+
+
+
     private
-     
+
       def user_params
         params.require(:user).permit(:email, :password, :avatar, :first_name, :last_name, :introduction)
       end
-   
+
 end
